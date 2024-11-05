@@ -160,6 +160,7 @@
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Obj.h" />
+    <ClInclude Include="Pikachu.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Scene.h" />
@@ -184,6 +185,7 @@
     <ClCompile Include="MainGame.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Obj.cpp" />
+    <ClCompile Include="Pikachu.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="ShotPutBall.cpp" />

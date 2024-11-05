@@ -93,10 +93,10 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,		// API¿¡¼­ ÇöÀç ±¸µ¿µÇ°í ÀÖ´Â Ç
 		else
 		{
 			// Å¸ÀÓ ¸Å´ÏÀúÀÇ Update¿Í FrameLimit´Â ¹Ýµå½Ã ¸Ç ¾Õ°ú ¸Ç µÚ¿¡ ÀÖ¾î¾ßÇÕ´Ï´Ù.
-			TimeManager::GetInstance().Update();
+			TimeManager->Update();
 			MainGame.Update();
 			MainGame.Render();
-			TimeManager::GetInstance().FrameLimit();
+			TimeManager->FrameLimit();
 		}		
 	}
 

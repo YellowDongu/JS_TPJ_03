@@ -58,6 +58,9 @@
     <Filter Include="01. Obj\ShotPutBall">
       <UniqueIdentifier>{5bf84c86-7f3d-4777-aad8-e915dfed50b3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Stages\Stage 01\00. Pikachu">
+      <UniqueIdentifier>{15d466a7-e3ba-40c3-acc8-65f930da7e6a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -114,6 +117,11 @@
     <ClInclude Include="GameSelectButton.h">
       <Filter>03. Stages\MainMenu</Filter>
     </ClInclude>
+    <ClInclude Include="KeyManager.h">
+      <Filter>04. Manager\01. KeyInput</Filter>
+    </ClInclude>
+    <ClInclude Include="Pikachu.h">
+      <Filter>03. Stages\Stage 01\00. Pikachu</Filter>
     <ClInclude Include="Archer.h">
       <Filter>03. Stages\Stage 02</Filter>
     </ClInclude>
@@ -176,6 +184,11 @@
     <ClCompile Include="GameSelectButton.cpp">
       <Filter>03. Stages\MainMenu</Filter>
     </ClCompile>
+    <ClCompile Include="KeyManager.cpp">
+      <Filter>04. Manager\01. KeyInput</Filter>
+    </ClCompile>
+    <ClCompile Include="Pikachu.cpp">
+      <Filter>03. Stages\Stage 01\00. Pikachu</Filter>
     <ClCompile Include="Archer.cpp">
       <Filter>03. Stages\Stage 02</Filter>
     </ClCompile>
