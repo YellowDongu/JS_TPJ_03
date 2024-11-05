@@ -28,12 +28,12 @@ void Archer::initalize()
 
 void Archer::render(HDC _hdc)
 {
-	Rectangle(_hdc, position.x - 50.0f, position.y, position.x, position.y + 150.0f);
+	Rectangle(_hdc, (int)position.x - 50, (int)position.y, (int)position.x, (int)position.y + 150);
 
-	MoveToEx(_hdc, bowVertex[0].x, bowVertex[0].y, nullptr);
+	MoveToEx(_hdc, (int)bowVertex[0].x, (int)bowVertex[0].y, nullptr);
 	for (int i = 1; i < 4; i++)
 	{
-		LineTo(_hdc, bowVertex[i].x, bowVertex[i].y);
+		LineTo(_hdc, (int)bowVertex[i].x, (int)bowVertex[i].y);
 	}
 }
 
@@ -46,7 +46,7 @@ void Archer::update()
 	D3DXVECTOR3 diffVector = D3DXVECTOR3{ (float)mousePos.x, (float)mousePos.y, 0.0f} - position;
 	D3DXVECTOR3 vector;
 	D3DXVec3Normalize(&vector, &diffVector);
-	float angle = acosf(D3DXVec3Length(&vector));
+	float angle = acosf(vector.x);
 	if (diffVector.y < 0)
 	{
 		angle *= -1;
@@ -55,7 +55,7 @@ void Archer::update()
 	D3DXMATRIX rotationMatrix;
 	D3DXMATRIX positionMatrix;
 	D3DXMatrixTranslation(&positionMatrix, position.x, position.y, position.z);
-	D3DXMatrixRotationZ(&rotationMatrix, D3DXToRadian(angle));
+	D3DXMatrixRotationZ(&rotationMatrix, angle);
 
 	D3DXMATRIX worldMatrix = rotationMatrix * positionMatrix;
 

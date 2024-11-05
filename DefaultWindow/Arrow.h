@@ -12,13 +12,10 @@ public:
 	void update();
 	void release();
 
-<<<<<<< Updated upstream
-=======
 	void shoot(float power);
 	const bool& isShot() const { return shot; }
 	void setPosition(D3DXVECTOR3 _value) { position = _value; }
 	void setDirection(D3DXVECTOR3 _value) { moveVector = _value; }
->>>>>>> Stashed changes
 
 private:
 	bool shot;
@@ -27,13 +24,6 @@ private:
 	D3DXVECTOR3 position;
 	D3DXVECTOR3 moveVector;
 	D3DXVECTOR3 vertex[2];
+	D3DXVECTOR3 initalVertex[2];
 
 };
-
-Arrow::Arrow()
-{
-}
-
-Arrow::~Arrow()
-{
-}

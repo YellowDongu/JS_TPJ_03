@@ -2,8 +2,6 @@
 #include "Arrow.h"
 #include "TimeManager.h"
 
-<<<<<<< Updated upstream
-=======
 Arrow::Arrow() : shot(false), angle(0.0f)
 {
 }
@@ -67,4 +65,3 @@ void Arrow::shoot(float power)
 	shot = true;
 	moveVector *= power;
 }
->>>>>>> Stashed changes
