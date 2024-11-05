@@ -152,6 +152,7 @@
     <ClInclude Include="CMonster.h" />
     <ClInclude Include="DefaultWindow.h" />
     <ClInclude Include="Define.h" />
+    <ClInclude Include="KeyManager.h" />
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Obj.h" />
@@ -169,6 +170,7 @@
   <ItemGroup>
     <ClCompile Include="CMonster.cpp" />
     <ClCompile Include="DefaultWindow.cpp" />
+    <ClCompile Include="KeyManager.cpp" />
     <ClCompile Include="MainGame.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Obj.cpp" />
