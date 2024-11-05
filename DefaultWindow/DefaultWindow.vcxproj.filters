@@ -111,6 +111,12 @@
     <ClInclude Include="GameSelectButton.h">
       <Filter>03. Stages\MainMenu</Filter>
     </ClInclude>
+    <ClInclude Include="Archer.h">
+      <Filter>03. Stages\Stage 02</Filter>
+    </ClInclude>
+    <ClInclude Include="Arrow.h">
+      <Filter>03. Stages\Stage 02</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -157,6 +163,12 @@
     </ClCompile>
     <ClCompile Include="GameSelectButton.cpp">
       <Filter>03. Stages\MainMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="Archer.cpp">
+      <Filter>03. Stages\Stage 02</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrow.cpp">
+      <Filter>03. Stages\Stage 02</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

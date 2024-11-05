@@ -12,9 +12,15 @@ public:
 	void update();
 	void release();
 
-	void shoot(D3DXVECTOR3 towards);
+	void shoot(float power);
+	const bool& isShot() const { return shot; }
+	void setPosition(D3DXVECTOR3 _value) { position = _value; }
+	void setDirection(D3DXVECTOR3 _value) { moveVector = _value; }
 private:
-	D3DXVECTOR3 positionVector;
+	bool shot;
+	float angle;
+
+	D3DXVECTOR3 position;
 	D3DXVECTOR3 moveVector;
 	D3DXVECTOR3 vertex[2];
 	D3DXVECTOR3 initalVertex[2];
