@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "DefaultWindow.h"
 #include "MainGame.h"
+#include "TimeManager.h"
 
 #define MAX_LOADSTRING 100
 
@@ -51,6 +52,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,		// APIø°º≠ «ˆ¿Á ±∏µøµ«∞Ì ¿÷¥¬ «
 	CMainGame	MainGame;
 	MainGame.Initialize();
 
+	TimeManager* TimeManager = &TimeManager::GetInstance();
+	TimeManager->Init();
+
 	//// ±‚∫ª ∏ﬁΩ√¡ˆ ∑Á«¡¿‘¥œ¥Ÿ.
 	//while (GetMessage(&msg, nullptr, 0, 0))
 	//{
@@ -88,15 +92,11 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,		// APIø°º≠ «ˆ¿Á ±∏µøµ«∞Ì ¿÷¥¬ «
 
 		else
 		{
-		
-			if (dwTime + 10 < GetTickCount())
-			{
-				MainGame.Update();
-				MainGame.Render();
-
-				dwTime = GetTickCount();
-			}
-			
+			// ≈∏¿” ∏≈¥œ¿˙¿« UpdateøÕ FrameLimit¥¬ π›µÂΩ√ ∏« æ’∞˙ ∏« µ⁄ø° ¿÷æÓæﬂ«’¥œ¥Ÿ.
+			TimeManager::GetInstance().Update();
+			MainGame.Update();
+			MainGame.Render();
+			TimeManager::GetInstance().FrameLimit();
 		}		
 	}
 

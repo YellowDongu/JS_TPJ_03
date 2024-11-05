@@ -1,14 +1,2 @@
-﻿  stdafx.cpp
-  CMonster.cpp
-  DefaultWindow.cpp
-  MainGame.cpp
-  MainMenu.cpp
-  Obj.cpp
-  Player.cpp
-  Scene.cpp
-  SceneManager.cpp
-  Stage01.cpp
-  Stage02.cpp
-  Stage03.cpp
-  코드를 생성하고 있습니다...
-  DefaultWindow.vcxproj -> D:\Downloads\2일차-행렬\x64\Debug\DefaultWindow.exe
+﻿  DefaultWindow.cpp
+  DefaultWindow.vcxproj -> C:\Users\30449\OneDrive\바탕 화면\JS_TPJ_03\x64\Debug\DefaultWindow.exe

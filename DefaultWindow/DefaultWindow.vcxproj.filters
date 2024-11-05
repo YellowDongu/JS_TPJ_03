@@ -43,6 +43,12 @@
     <Filter Include="03. Stages\MainMenu">
       <UniqueIdentifier>{9fe9571f-4cee-471d-a9d9-857142852b19}</UniqueIdentifier>
     </Filter>
+    <Filter Include="04. Manager">
+      <UniqueIdentifier>{5d5aa675-94d5-491b-9a3c-9d77e18e84ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04. Manager\00. Time">
+      <UniqueIdentifier>{671f3ca0-38d1-4e20-8353-a093ad72c0bc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -93,6 +99,9 @@
     <ClInclude Include="Scene.h">
       <Filter>02. Scene</Filter>
     </ClInclude>
+    <ClInclude Include="TimeManager.h">
+      <Filter>04. Manager\00. Time</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -130,6 +139,9 @@
     </ClCompile>
     <ClCompile Include="Scene.cpp">
       <Filter>02. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeManager.cpp">
+      <Filter>04. Manager\00. Time</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
