@@ -67,11 +67,7 @@ void CPlayer::LateUpdate()
 
 void CPlayer::Render(HDC hDC)
 {
-	Rectangle(hDC, 
-		int(m_tInfo.vPos.x - 50.f), 
-		int(m_tInfo.vPos.y - 50.f),
-		int(m_tInfo.vPos.x + 50.f),
-		int(m_tInfo.vPos.y + 50.f));
+	
 }
 
 void CPlayer::Release()
