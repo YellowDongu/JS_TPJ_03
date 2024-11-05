@@ -20,35 +20,55 @@ void CSceneManager::Instantiate()
 	if (sceneMgr) return;
 	sceneMgr = new CSceneManager();
 	sceneMgr->Initialize();
-
-	CMainMenu* mainMenu = new CMainMenu();
-	CStage01* stage01 = new CStage01();
-	CStage02* stage02 = new CStage02();
-	CStage03* stage03 = new CStage03();
-
-	
 }
 
 void CSceneManager::Initialize()
 {
+	CMainMenu* mainMenu = new CMainMenu();
+	mainMenu->Initialize();
+	m_cCurrentScene = mainMenu;
+	m_Scenes.push_back(mainMenu);
+	CStage01* stage01 = new CStage01();
+	m_Scenes.push_back(stage01);
+	CStage02* stage02 = new CStage02();
+	m_Scenes.push_back(stage02);
+	CStage03* stage03 = new CStage03();
+	m_Scenes.push_back(stage03);
 }
 
 void CSceneManager::Update()
 {
 	m_cCurrentScene->Update();
-
-	if (m_cCurrentScene->ReturnToMainMenu())
-	{
-		m_cCurrentScene->Release();
-
-		m_cCurrentScene = m_Scenes[0];
-		m_cCurrentScene->Initialize();
-	}
 }
 
 void CSceneManager::LateUpdate()
 {
 	m_cCurrentScene->LateUpdate();
+
+
+	if (m_cCurrentScene != m_Scenes[0])
+	{
+		if (m_cCurrentScene->ReturnToMainMenu())
+		{
+			m_cCurrentScene->ConfirmReturn();
+			m_cCurrentScene->Release();
+
+			m_cCurrentScene = m_Scenes[0];
+			m_cCurrentScene->Initialize();
+		}
+
+	}
+	else
+	{
+		int sceneNumber = m_cCurrentScene->changeScene();
+		if (sceneNumber != -1)
+		{
+			m_cCurrentScene->Release();
+
+			m_cCurrentScene = m_Scenes[sceneNumber];
+			m_cCurrentScene->Initialize();
+		}
+	}
 }
 
 void CSceneManager::Render(HDC _hdc)
@@ -59,16 +79,15 @@ void CSceneManager::Render(HDC _hdc)
 void CSceneManager::Release()
 {
 	m_cCurrentScene->Release();
-}
-
-void CSceneManager::destroy()
-{
-	Release();
 	for (auto& scene : m_Scenes)
 	{
 		delete scene;
 	}
 	m_Scenes.clear();
+}
 
+void CSceneManager::Destroy()
+{
+	Release();
 	delete this;
 }

@@ -4,7 +4,7 @@
 class CScene
 {
 public:
-	CScene() : m_bReturn(false) {}
+	CScene() : m_bReturn(false), m_iOtherStage(-1) {}
 	virtual ~CScene() {}
 
 	virtual void Initialize() = 0;
