@@ -14,7 +14,7 @@ public:
 	void LateUpdate();
 	void Render(HDC _hdc);
 	void Release();
-	void destroy();
+	void Destroy();
 
 private:
 	vector<CScene*> m_Scenes;

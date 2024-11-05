@@ -93,6 +93,15 @@
     <ClInclude Include="Scene.h">
       <Filter>02. Scene</Filter>
     </ClInclude>
+    <ClInclude Include="Archer.h">
+      <Filter>03. Stages\Stage 02</Filter>
+    </ClInclude>
+    <ClInclude Include="Arrow.h">
+      <Filter>03. Stages\Stage 02</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>03. Stages\Stage 02</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -130,6 +139,15 @@
     </ClCompile>
     <ClCompile Include="Scene.cpp">
       <Filter>02. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Archer.cpp">
+      <Filter>03. Stages\Stage 02</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrow.cpp">
+      <Filter>03. Stages\Stage 02</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>03. Stages\Stage 02</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
