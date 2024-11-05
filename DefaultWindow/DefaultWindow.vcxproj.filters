@@ -116,6 +116,11 @@
     </ClInclude>
     <ClInclude Include="Pikachu.h">
       <Filter>03. Stages\Stage 01\00. Pikachu</Filter>
+    <ClInclude Include="Archer.h">
+      <Filter>03. Stages\Stage 02</Filter>
+    </ClInclude>
+    <ClInclude Include="Arrow.h">
+      <Filter>03. Stages\Stage 02</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +171,11 @@
     </ClCompile>
     <ClCompile Include="Pikachu.cpp">
       <Filter>03. Stages\Stage 01\00. Pikachu</Filter>
+    <ClCompile Include="Archer.cpp">
+      <Filter>03. Stages\Stage 02</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrow.cpp">
+      <Filter>03. Stages\Stage 02</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

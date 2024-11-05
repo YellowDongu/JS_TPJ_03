@@ -3,7 +3,7 @@
 #include "SceneManager.h"
 #include "KeyManager.h"
 
-CMainGame::CMainGame()
+CMainGame::CMainGame() : m_DC(NULL)
 {
 }
 

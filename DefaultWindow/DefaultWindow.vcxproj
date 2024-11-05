@@ -149,6 +149,9 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Archer.h" />
+    <ClInclude Include="Arrow.h" />
+    <ClInclude Include="CScrollMgr.h" />
     <ClInclude Include="GameSelectButton.h" />
     <ClInclude Include="CMonster.h" />
     <ClInclude Include="DefaultWindow.h" />
@@ -170,7 +173,10 @@
     <ClInclude Include="TimeManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Archer.cpp" />
+    <ClCompile Include="Arrow.cpp" />
     <ClCompile Include="CMonster.cpp" />
+    <ClCompile Include="CScrollMgr.cpp" />
     <ClCompile Include="DefaultWindow.cpp" />
     <ClCompile Include="GameSelectButton.cpp" />
     <ClCompile Include="KeyManager.cpp" />

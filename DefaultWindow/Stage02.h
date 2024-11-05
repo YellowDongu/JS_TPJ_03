@@ -1,5 +1,6 @@
 #pragma once
 #include "Scene.h"
+#include "Archer.h"
 
 class CStage02 : public CScene
 {
@@ -14,5 +15,11 @@ public:
 	void Release() override;
 
 private:
+	float power;
+
+
+	Archer* archer;
+	Arrow* arrow;
+
 
 };
