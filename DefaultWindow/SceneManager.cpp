@@ -25,8 +25,6 @@ void CSceneManager::Instantiate()
 	CStage01* stage01 = new CStage01();
 	CStage02* stage02 = new CStage02();
 	CStage03* stage03 = new CStage03();
-
-	
 }
 
 void CSceneManager::Initialize()

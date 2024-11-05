@@ -52,6 +52,9 @@
     <Filter Include="04. Manager\01. KeyInput">
       <UniqueIdentifier>{503907d6-889a-417d-9e2b-bd262e931d32}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Stages\Stage 01\00. Pikachu">
+      <UniqueIdentifier>{2b065deb-134b-4f8b-87a8-dac21d7d30ad}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -106,7 +109,10 @@
       <Filter>04. Manager\00. Time</Filter>
     </ClInclude>
     <ClInclude Include="KeyManager.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>04. Manager\01. KeyInput</Filter>
+    </ClInclude>
+    <ClInclude Include="Pikachu.h">
+      <Filter>03. Stages\Stage 01\00. Pikachu</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -150,7 +156,10 @@
       <Filter>04. Manager\00. Time</Filter>
     </ClCompile>
     <ClCompile Include="KeyManager.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>04. Manager\01. KeyInput</Filter>
+    </ClCompile>
+    <ClCompile Include="Pikachu.cpp">
+      <Filter>03. Stages\Stage 01\00. Pikachu</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

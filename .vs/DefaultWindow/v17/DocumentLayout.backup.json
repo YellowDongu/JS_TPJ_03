@@ -3,6 +3,42 @@
   "WorkspaceRootPath": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\Stage01.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|solutionrelative:DefaultWindow\\Stage01.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\Stage01.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|solutionrelative:DefaultWindow\\Stage01.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\Pikachu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|solutionrelative:DefaultWindow\\Pikachu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\SceneManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|solutionrelative:DefaultWindow\\SceneManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\SceneManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|solutionrelative:DefaultWindow\\SceneManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\Define.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|solutionrelative:DefaultWindow\\Define.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\TimeManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|solutionrelative:DefaultWindow\\TimeManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\TimeManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|solutionrelative:DefaultWindow\\TimeManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\DefaultWindow.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|solutionrelative:DefaultWindow\\DefaultWindow.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\KeyManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|solutionrelative:DefaultWindow\\KeyManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -11,36 +47,16 @@
       "RelativeMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|solutionrelative:DefaultWindow\\KeyManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\Define.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|solutionrelative:DefaultWindow\\Define.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\DefaultWindow.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|solutionrelative:DefaultWindow\\DefaultWindow.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\TimeManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|solutionrelative:DefaultWindow\\TimeManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\MainGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|solutionrelative:DefaultWindow\\MainGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\TimeManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|solutionrelative:DefaultWindow\\TimeManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\MainMenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|solutionrelative:DefaultWindow\\MainMenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\MainGame.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|solutionrelative:DefaultWindow\\MainGame.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\Stage01.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|solutionrelative:DefaultWindow\\Stage01.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\Stage01.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|solutionrelative:DefaultWindow\\Stage01.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\MainGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{473BA340-F8E4-4F88-B1C4-BF65F0D45B5F}|DefaultWindow\\DefaultWindow.vcxproj|solutionrelative:DefaultWindow\\MainGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,37 +66,73 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "Pikachu.h",
+              "DocumentMoniker": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\Pikachu.h",
+              "RelativeDocumentMoniker": "DefaultWindow\\Pikachu.h",
+              "ToolTip": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\Pikachu.h",
+              "RelativeToolTip": "DefaultWindow\\Pikachu.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-05T07:16:23.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SceneManager.cpp",
+              "DocumentMoniker": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\SceneManager.cpp",
+              "RelativeDocumentMoniker": "DefaultWindow\\SceneManager.cpp",
+              "ToolTip": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\SceneManager.cpp",
+              "RelativeToolTip": "DefaultWindow\\SceneManager.cpp",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-05T04:57:41.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MainMenu.cpp",
+              "DocumentMoniker": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\MainMenu.cpp",
+              "RelativeDocumentMoniker": "DefaultWindow\\MainMenu.cpp",
+              "ToolTip": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\MainMenu.cpp",
+              "RelativeToolTip": "DefaultWindow\\MainMenu.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-05T04:44:49.771Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "KeyManager.cpp",
               "DocumentMoniker": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\KeyManager.cpp",
               "RelativeDocumentMoniker": "DefaultWindow\\KeyManager.cpp",
               "ToolTip": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\KeyManager.cpp",
               "RelativeToolTip": "DefaultWindow\\KeyManager.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-05T04:29:05.59Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-05T04:29:05.59Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Define.h",
               "DocumentMoniker": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\Define.h",
               "RelativeDocumentMoniker": "DefaultWindow\\Define.h",
               "ToolTip": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\Define.h",
               "RelativeToolTip": "DefaultWindow\\Define.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-05T04:28:42.386Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-05T04:28:42.386Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
               "Title": "KeyManager.h",
               "DocumentMoniker": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\KeyManager.h",
               "RelativeDocumentMoniker": "DefaultWindow\\KeyManager.h",
@@ -88,25 +140,23 @@
               "RelativeToolTip": "DefaultWindow\\KeyManager.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-05T04:28:19.726Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-05T04:28:19.726Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "DefaultWindow.cpp",
               "DocumentMoniker": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\DefaultWindow.cpp",
               "RelativeDocumentMoniker": "DefaultWindow\\DefaultWindow.cpp",
               "ToolTip": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\DefaultWindow.cpp",
               "RelativeToolTip": "DefaultWindow\\DefaultWindow.cpp",
-              "ViewState": "AgIAACUAAAAAAAAAAAAAAC4AAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAAADQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-05T04:15:21.326Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-05T04:15:21.326Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "MainGame.h",
               "DocumentMoniker": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\MainGame.h",
               "RelativeDocumentMoniker": "DefaultWindow\\MainGame.h",
@@ -118,19 +168,57 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
               "Title": "MainGame.cpp",
               "DocumentMoniker": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\MainGame.cpp",
               "RelativeDocumentMoniker": "DefaultWindow\\MainGame.cpp",
               "ToolTip": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\MainGame.cpp",
               "RelativeToolTip": "DefaultWindow\\MainGame.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACEAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-05T04:15:03.658Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
+              "Title": "Stage01.cpp",
+              "DocumentMoniker": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\Stage01.cpp",
+              "RelativeDocumentMoniker": "DefaultWindow\\Stage01.cpp",
+              "ToolTip": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\Stage01.cpp",
+              "RelativeToolTip": "DefaultWindow\\Stage01.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-05T04:03:44.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Stage01.h",
+              "DocumentMoniker": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\Stage01.h",
+              "RelativeDocumentMoniker": "DefaultWindow\\Stage01.h",
+              "ToolTip": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\Stage01.h",
+              "RelativeToolTip": "DefaultWindow\\Stage01.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-05T04:03:47.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SceneManager.h",
+              "DocumentMoniker": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\SceneManager.h",
+              "RelativeDocumentMoniker": "DefaultWindow\\SceneManager.h",
+              "ToolTip": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\SceneManager.h",
+              "RelativeToolTip": "DefaultWindow\\SceneManager.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-05T04:57:40.368Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "TimeManager.cpp",
               "DocumentMoniker": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\TimeManager.cpp",
               "RelativeDocumentMoniker": "DefaultWindow\\TimeManager.cpp",
@@ -142,39 +230,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "TimeManager.h",
               "DocumentMoniker": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\TimeManager.h",
               "RelativeDocumentMoniker": "DefaultWindow\\TimeManager.h",
               "ToolTip": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\TimeManager.h",
               "RelativeToolTip": "DefaultWindow\\TimeManager.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAC8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-11-05T04:13:02.662Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Stage01.h",
-              "DocumentMoniker": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\Stage01.h",
-              "RelativeDocumentMoniker": "DefaultWindow\\Stage01.h",
-              "ToolTip": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\Stage01.h",
-              "RelativeToolTip": "DefaultWindow\\Stage01.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-05T04:03:47.897Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Stage01.cpp",
-              "DocumentMoniker": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\Stage01.cpp",
-              "RelativeDocumentMoniker": "DefaultWindow\\Stage01.cpp",
-              "ToolTip": "C:\\Users\\30449\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\JS_TPJ_03\\DefaultWindow\\Stage01.cpp",
-              "RelativeToolTip": "DefaultWindow\\Stage01.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-05T04:03:44.818Z"
             }
           ]
         }
