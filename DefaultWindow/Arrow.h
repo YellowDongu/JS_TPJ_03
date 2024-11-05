@@ -16,7 +16,6 @@ public:
 	const bool& isShot() const { return shot; }
 	void setPosition(D3DXVECTOR3 _value) { position = _value; }
 	void setDirection(D3DXVECTOR3 _value) { moveVector = _value; }
-
 private:
 	bool shot;
 	float angle;

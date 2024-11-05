@@ -24,7 +24,6 @@ void Arrow::render(HDC _hdc)
 {
 	MoveToEx(_hdc, (int)vertex[0].x, (int)vertex[0].y, nullptr);
 	LineTo(_hdc, (int)vertex[1].x, (int)vertex[1].y);
-
 }
 
 void Arrow::update()
