@@ -13,5 +13,5 @@ public:
 	void Render(HDC _hdc) override;
 	void Release() override;
 private:
-
+	int mTest;
 };
