@@ -1,5 +1,6 @@
 #pragma once
 #include "Scene.h"
+#include "GameSelectButton.h"
 
 class CMainMenu : public CScene
 {
@@ -14,4 +15,6 @@ public:
 	void Release() override;
 
 private:
+
+	vector<GameSelectButton*> buttons;
 };

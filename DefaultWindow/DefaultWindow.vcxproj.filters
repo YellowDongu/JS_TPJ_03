@@ -108,6 +108,9 @@
     <ClInclude Include="KeyManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="GameSelectButton.h">
+      <Filter>03. Stages\MainMenu</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -151,6 +154,9 @@
     </ClCompile>
     <ClCompile Include="KeyManager.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GameSelectButton.cpp">
+      <Filter>03. Stages\MainMenu</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
