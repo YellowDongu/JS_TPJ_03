@@ -52,6 +52,12 @@
     <Filter Include="04. Manager\01. KeyInput">
       <UniqueIdentifier>{503907d6-889a-417d-9e2b-bd262e931d32}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Obj\ShotPutPlayer">
+      <UniqueIdentifier>{a7794e7d-93fc-4b6e-b6a3-844a359913a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\ShotPutBall">
+      <UniqueIdentifier>{5bf84c86-7f3d-4777-aad8-e915dfed50b3}</UniqueIdentifier>
+    </Filter>
     <Filter Include="03. Stages\Stage 01\00. Pikachu">
       <UniqueIdentifier>{15d466a7-e3ba-40c3-acc8-65f930da7e6a}</UniqueIdentifier>
     </Filter>
@@ -122,6 +128,18 @@
     <ClInclude Include="Arrow.h">
       <Filter>03. Stages\Stage 02</Filter>
     </ClInclude>
+    <ClInclude Include="CScrollMgr.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyManager.h">
+      <Filter>04. Manager\01. KeyInput</Filter>
+    </ClInclude>
+    <ClInclude Include="ShotPutPlayer.h">
+      <Filter>01. Obj\ShotPutPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="ShotPutBall.h">
+      <Filter>01. Obj\ShotPutBall</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -176,6 +194,18 @@
     </ClCompile>
     <ClCompile Include="Arrow.cpp">
       <Filter>03. Stages\Stage 02</Filter>
+    </ClCompile>
+    <ClCompile Include="CScrollMgr.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyManager.cpp">
+      <Filter>04. Manager\01. KeyInput</Filter>
+    </ClCompile>
+    <ClCompile Include="ShotPutPlayer.cpp">
+      <Filter>01. Obj\ShotPutPlayer</Filter>
+    </ClCompile>
+    <ClCompile Include="ShotPutBall.cpp">
+      <Filter>01. Obj\ShotPutBall</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

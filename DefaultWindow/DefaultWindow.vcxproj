@@ -165,6 +165,8 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="ShotPutBall.h" />
+    <ClInclude Include="ShotPutPlayer.h" />
     <ClInclude Include="Stage01.h" />
     <ClInclude Include="Stage02.h" />
     <ClInclude Include="Stage03.h" />
@@ -186,6 +188,8 @@
     <ClCompile Include="Pikachu.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="ShotPutBall.cpp" />
+    <ClCompile Include="ShotPutPlayer.cpp" />
     <ClCompile Include="Stage01.cpp" />
     <ClCompile Include="Stage02.cpp" />
     <ClCompile Include="Stage03.cpp" />
