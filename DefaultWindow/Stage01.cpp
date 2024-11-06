@@ -2,6 +2,7 @@
 #include "Stage01.h"
 
 #include "Ball.h"
+#include "CBmpMgr.h"
 #include "KeyManager.h"
 #include "Obj.h"
 #include "Pikachu.h"
@@ -18,6 +19,11 @@ CStage01::~CStage01()
 
 void CStage01::Initialize()
 {
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Sprite/Pikachu_BG.bmp", L"Pikachu_BG");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Sprite/Ball_Shadow.bmp", L"Ball_Shadow");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Sprite/Ball.bmp", L"Ball");
+
+
 	mKeyManager = KeyManager::Get_Instance();
 	// Objects 추가하기
 	Pikachu* p1 = new Pikachu(0);
@@ -45,8 +51,12 @@ void CStage01::LateUpdate()
 
 void CStage01::Render(HDC _hdc)
 {
+	BitBlt(_hdc,
+		0, 0,
+		800, 600,
+		CBmpMgr::Get_Instance()->Find_Image(L"Pikachu_BG"),
+		0, 0, SRCCOPY);
 	RenderObjects(_hdc);
-	Rectangle(_hdc, WINCX / 2 - 10, WINCY - 250, WINCX / 2 + 10, WINCY);
 }
 
 void CStage01::Release()

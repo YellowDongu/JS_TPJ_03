@@ -14,12 +14,21 @@ public:
 
 	void Collision();
 
+	void InitFadeBitmap(HDC hDC);
+
 	CollisionDirection DetectBoxCollisionDir(const RECT& objRect, const RECT& otherRect);
 
 private:
+	HBITMAP mFadeBitmap;
 	D3DXVECTOR2 mVelocity;
 	D3DXVECTOR3 mPrevPosition;
 	Pikachu* mPlayer[2];
 	float mWidth;
 	float mHeight;
+	BYTE mOpacity;
+	bool mFadeIn;
+	bool mFadeOut;
+	float mCurrentTime;
+	float mAniTime;
+	int mFrame;
 };
