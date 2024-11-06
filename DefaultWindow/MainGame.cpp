@@ -2,6 +2,7 @@
 #include "MainGame.h"
 #include "SceneManager.h"
 #include "KeyManager.h"
+#include "CScrollMgr.h"
 
 CMainGame::CMainGame() : m_DC(NULL)
 {
@@ -36,7 +37,9 @@ void CMainGame::Render()
 
 void CMainGame::Release()
 {
-	sceneMgr->Destroy();
+
+	CSceneManager::Destroy();
 	KeyManager::Get_Instance()->Destroy_Instance();
+	CScrollMgr::Destroy_Instance();
 	ReleaseDC(g_hWnd, m_DC);
 }
