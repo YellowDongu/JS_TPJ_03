@@ -16,6 +16,8 @@
 #include <malloc.h>
 #include <memory.h>
 #include <tchar.h>
+#include <map>
+#include <algorithm>
 
 #include <d3d9.h>
 #include <d3dx9.h>
@@ -23,6 +25,15 @@
 #pragma comment(lib, "d3d9.lib")
 #pragma comment(lib, "d3dx9.lib")
 
+#include <io.h>
+
+#include "fmod.h"
+#include "fmod.hpp"
+#pragma comment(lib, "fmodex_vc.lib")
+
+
+#include <Vfw.h>
+#pragma comment(lib, "vfw32.lib")
 
 // TODO: 프로그램에 필요한 추가 헤더는 여기에서 참조합니다.
 #include <list>

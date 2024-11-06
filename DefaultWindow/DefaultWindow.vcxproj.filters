@@ -64,40 +64,49 @@
     <Filter Include="03. Stages\Stage 01\01. Ball">
       <UniqueIdentifier>{75ba614d-4b8d-435d-be90-2cccb636e9bc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="04. Manager\02. Bmp">
+      <UniqueIdentifier>{d1971e10-1151-450a-a747-63dd70128591}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04. Manager\03. Sound">
+      <UniqueIdentifier>{b8c6b0a0-0711-4071-a29f-a3f8a9784e14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04. Manager\04. Scroll">
+      <UniqueIdentifier>{7afc0f22-c36c-4f51-b647-259f3747c048}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="Archer.h" />
+    <ClInclude Include="Arrow.h" />
+    <ClInclude Include="CScrollMgr.h" />
+    <ClInclude Include="GameSelectButton.h" />
+    <ClInclude Include="CMonster.h" />
+    <ClInclude Include="DefaultWindow.h" />
+    <ClInclude Include="Define.h" />
+    <ClInclude Include="KeyManager.h" />
+    <ClInclude Include="MainGame.h" />
+    <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="Obj.h" />
+    <ClInclude Include="Pikachu.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="Stage01.h" />
+    <ClInclude Include="Stage02.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TimeManager.h" />
+    <ClInclude Include="ShotPutBall.h">
+      <Filter>Stage3</Filter>
     </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="ShotPutPlayer.h">
+      <Filter>Stage3</Filter>
     </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="DefaultWindow.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="MainGame.h">
-      <Filter>00. MainGame</Filter>
-    </ClInclude>
-    <ClInclude Include="Define.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Obj.h">
-      <Filter>01. Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>01. Obj\00. Player</Filter>
-    </ClInclude>
-    <ClInclude Include="CMonster.h">
-      <Filter>01. Obj\01. Monster</Filter>
-    </ClInclude>
-    <ClInclude Include="MainMenu.h">
-      <Filter>03. Stages\MainMenu</Filter>
+    <ClInclude Include="ShotPutStadium.h">
+      <Filter>Stage3</Filter>
     </ClInclude>
     <ClInclude Include="Stage03.h">
       <Filter>03. Stages\Stage 03</Filter>
@@ -132,9 +141,6 @@
     <ClInclude Include="Arrow.h">
       <Filter>03. Stages\Stage 02</Filter>
     </ClInclude>
-    <ClInclude Include="CScrollMgr.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="DeadArrow.h">
       <Filter>03. Stages\Stage 02</Filter>
     </ClInclude>
@@ -149,6 +155,18 @@
     </ClInclude>
     <ClInclude Include="PikachuVolleyballMgr.h">
       <Filter>03. Stages\Stage 01</Filter>
+    </ClInclude>
+    <ClInclude Include="CBmpMgr.h">
+      <Filter>04. Manager\02. Bmp</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundMgr.h">
+      <Filter>04. Manager\03. Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="CScrollMgr.h">
+      <Filter>04. Manager\04. Scroll</Filter>
+    </ClInclude>
+    <ClInclude Include="CMyBmp.h">
+      <Filter>04. Manager\02. Bmp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -206,9 +224,6 @@
     <ClCompile Include="Arrow.cpp">
       <Filter>03. Stages\Stage 02</Filter>
     </ClCompile>
-    <ClCompile Include="CScrollMgr.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="DeadArrow.cpp">
       <Filter>03. Stages\Stage 02</Filter>
     </ClCompile>
@@ -224,18 +239,29 @@
     <ClCompile Include="PikachuVolleyballMgr.cpp">
       <Filter>03. Stages\Stage 01</Filter>
     </ClCompile>
+    <ClCompile Include="CBmpMgr.cpp">
+      <Filter>04. Manager\02. Bmp</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundMgr.cpp">
+      <Filter>04. Manager\03. Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="CScrollMgr.cpp">
+      <Filter>04. Manager\04. Scroll</Filter>
+    </ClCompile>
+    <ClCompile Include="CMyBmp.cpp">
+      <Filter>04. Manager\02. Bmp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="DefaultWindow.rc">
-      <Filter>리소스 파일</Filter>
-    </ResourceCompile>
+    <Image Include="DefaultWindow.ico" />
+    <Image Include="small.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="small.ico">
-      <Filter>리소스 파일</Filter>
-    </Image>
-    <Image Include="DefaultWindow.ico">
-      <Filter>리소스 파일</Filter>
-    </Image>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Stage3">
+      <UniqueIdentifier>{3ab3712c-a336-4509-9979-e60c0966b1af}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

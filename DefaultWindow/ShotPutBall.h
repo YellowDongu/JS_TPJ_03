@@ -11,12 +11,19 @@ public:
 	void Update() override;
 	void Render(HDC hDC) override;
 	void Release() override;
+	void LateUpdate() override;
 
 public:
 	void		Set_Player(CObj* pPlayer) { m_pPlayer = pPlayer; }
-	void LateUpdate() override;
 
 private:
+	void		SetMatrix();
+
+private:
+	float m_fSpeedCrashBoundary;
+	float m_fXScale;
+	float m_fYScale;
 	CObj* m_pPlayer;
+
 };
 
