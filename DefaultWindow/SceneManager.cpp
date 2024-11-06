@@ -45,7 +45,6 @@ void CSceneManager::LateUpdate()
 {
 	m_cCurrentScene->LateUpdate();
 
-
 	if (m_cCurrentScene != m_Scenes[0])
 	{
 		if (m_cCurrentScene->ReturnToMainMenu())
@@ -88,6 +87,9 @@ void CSceneManager::Release()
 
 void CSceneManager::Destroy()
 {
-	Release();
-	delete this;
+	if (!sceneMgr) return;
+
+	sceneMgr->Release();
+	delete sceneMgr;
+	sceneMgr = nullptr;
 }

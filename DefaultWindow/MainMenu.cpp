@@ -29,8 +29,9 @@ void CMainMenu::Initialize()
 
 void CMainMenu::Update()
 {
+	KeyManager::Get_Instance()->Update_Key();
 
-	if (!KeyManager::Get_Instance()->Key_Down(VK_LBUTTON)) return;
+	if (!KeyManager::Get_Instance()->Key_Pressing(VK_LBUTTON)) return;
 
 	POINT mousePos;
 	GetCursorPos(&mousePos);
@@ -48,7 +49,6 @@ void CMainMenu::Update()
 
 void CMainMenu::LateUpdate()
 {
-
 
 }
 
