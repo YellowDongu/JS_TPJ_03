@@ -11,6 +11,7 @@ public:
 	void Update() override;
 	void Render(HDC hDC) override;
 	void Release() override;
+	void LateUpdate() override;
 
 public:
 	void	SetAngle(float fAngle) { m_fAngle = fAngle; }
@@ -40,5 +41,6 @@ private:
 	D3DXMATRIX matScale;
 	D3DXMATRIX matRotZ;
 	D3DXMATRIX matTrans;
+
 };
 

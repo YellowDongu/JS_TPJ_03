@@ -11,6 +11,7 @@ public:
 	void Update() override;
 	void Render(HDC hDC) override;
 	void Release() override;
+	void LateUpdate() override;
 
 public:
 	void		Set_Player(CObj* pPlayer) { m_pPlayer = pPlayer; }
@@ -18,5 +19,6 @@ public:
 
 private:
 	CObj* m_pPlayer;
+
 };
 

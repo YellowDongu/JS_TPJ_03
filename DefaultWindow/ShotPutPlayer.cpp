@@ -104,3 +104,7 @@ void CShotPutPlayer::SetMatrix()
 	D3DXMatrixTranslation(&matTrans, m_tInfo.vPos.x, m_tInfo.vPos.y, m_tInfo.vPos.z); // À§Ä¡
 	m_tInfo.matWorld = matScale * matRotZ * matTrans;
 }
+
+void CShotPutPlayer::LateUpdate()
+{
+}

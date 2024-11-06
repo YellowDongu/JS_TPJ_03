@@ -37,3 +37,7 @@ void CShotPutBall::Render(HDC hDC)
 void CShotPutBall::Release()
 {
 }
+
+void CShotPutBall::LateUpdate()
+{
+}

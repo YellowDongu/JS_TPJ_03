@@ -61,6 +61,15 @@
     <Filter Include="03. Stages\Stage 01\00. Pikachu">
       <UniqueIdentifier>{15d466a7-e3ba-40c3-acc8-65f930da7e6a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="04. Manager\02. Bmp">
+      <UniqueIdentifier>{d1971e10-1151-450a-a747-63dd70128591}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04. Manager\03. Sound">
+      <UniqueIdentifier>{b8c6b0a0-0711-4071-a29f-a3f8a9784e14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04. Manager\04. Scroll">
+      <UniqueIdentifier>{7afc0f22-c36c-4f51-b647-259f3747c048}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -129,9 +138,6 @@
     <ClInclude Include="Arrow.h">
       <Filter>03. Stages\Stage 02</Filter>
     </ClInclude>
-    <ClInclude Include="CScrollMgr.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="DeadArrow.h">
       <Filter>03. Stages\Stage 02</Filter>
     </ClInclude>
@@ -140,6 +146,18 @@
     </ClInclude>
     <ClInclude Include="ShotPutBall.h">
       <Filter>01. Obj\ShotPutBall</Filter>
+    </ClInclude>
+    <ClInclude Include="CBmpMgr.h">
+      <Filter>04. Manager\02. Bmp</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundMgr.h">
+      <Filter>04. Manager\03. Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="CScrollMgr.h">
+      <Filter>04. Manager\04. Scroll</Filter>
+    </ClInclude>
+    <ClInclude Include="CMyBmp.h">
+      <Filter>04. Manager\02. Bmp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -190,15 +208,12 @@
     </ClCompile>
     <ClCompile Include="Pikachu.cpp">
       <Filter>03. Stages\Stage 01\00. Pikachu</Filter>
-</ClCompile>
+    </ClCompile>
     <ClCompile Include="Archer.cpp">
       <Filter>03. Stages\Stage 02</Filter>
     </ClCompile>
     <ClCompile Include="Arrow.cpp">
       <Filter>03. Stages\Stage 02</Filter>
-    </ClCompile>
-    <ClCompile Include="CScrollMgr.cpp">
-      <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="DeadArrow.cpp">
       <Filter>03. Stages\Stage 02</Filter>
@@ -208,6 +223,18 @@
     </ClCompile>
     <ClCompile Include="ShotPutBall.cpp">
       <Filter>01. Obj\ShotPutBall</Filter>
+    </ClCompile>
+    <ClCompile Include="CBmpMgr.cpp">
+      <Filter>04. Manager\02. Bmp</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundMgr.cpp">
+      <Filter>04. Manager\03. Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="CScrollMgr.cpp">
+      <Filter>04. Manager\04. Scroll</Filter>
+    </ClCompile>
+    <ClCompile Include="CMyBmp.cpp">
+      <Filter>04. Manager\02. Bmp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

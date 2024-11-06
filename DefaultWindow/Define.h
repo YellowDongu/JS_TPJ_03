@@ -22,6 +22,16 @@ typedef struct tagInfo
 }INFO;
 
 
+
+enum CHANNELID
+{
+	SOUND_EFFECT,
+	SOUND_BGM,
+	MAXCHANNEL
+};
+
+
+
 template<typename T>
 void Safe_Delete(T& Tmp)
 {
@@ -41,3 +51,80 @@ static D3DXVECTOR3		Get_Mouse()
 
 	return D3DXVECTOR3((float)ptMouse.x, (float)ptMouse.y, 0.f);
 }
+
+
+
+
+
+struct tagFinder
+{
+public:
+	tagFinder(const TCHAR* pTag) : m_pTag(pTag) {}
+
+	template<typename T>
+	bool	operator()(T& MyPair)
+	{
+		return !lstrcmp(m_pTag, MyPair.first);
+	}
+
+private:
+	const TCHAR* m_pTag;
+};
+
+struct tagDeleteObj
+{
+	template<typename T>
+	void	operator()(T& Temp)
+	{
+		if (Temp)
+		{
+			delete Temp;
+			Temp = nullptr;
+		}
+	}
+};
+
+
+struct tagDeleteMap
+{
+	template<typename T>
+	void	operator()(T& MyPair)
+	{
+		if (MyPair.second)
+		{
+			delete MyPair.second;
+			MyPair.second = nullptr;
+		}
+	}
+};
+
+
+
+enum SCENEID { SC_LOGO, SC_MENU, SC_EDIT, SC_STAGE, SC_END };
+
+typedef struct tagLinePoint
+{
+
+	float	fX;
+	float	fY;
+
+	tagLinePoint()
+	{
+		ZeroMemory(this, sizeof(tagLinePoint));
+	}
+	tagLinePoint(float _fX, float _fY) : fX(_fX), fY(_fY) {}
+
+}LINEPOINT;
+
+typedef struct tagLine
+{
+	LINEPOINT		tLeft;
+	LINEPOINT		tRight;
+
+	tagLine() { ZeroMemory(this, sizeof(tagLine)); }
+	tagLine(LINEPOINT& _tLeft, LINEPOINT& _tRight)
+		: tLeft(_tLeft), tRight(_tRight)
+	{
+	}
+
+}LINE;
