@@ -30,6 +30,8 @@ private:
 	void KeyInput();
 	void SetMatrix();
 
+public:
+	void LateUpdate() override;
 
 private:
 	float m_fAngle;

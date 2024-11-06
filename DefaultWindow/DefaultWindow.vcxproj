@@ -151,6 +151,7 @@
   <ItemGroup>
     <ClInclude Include="Archer.h" />
     <ClInclude Include="Arrow.h" />
+    <ClInclude Include="Ball.h" />
     <ClInclude Include="CScrollMgr.h" />
     <ClInclude Include="DeadArrow.h" />
     <ClInclude Include="GameSelectButton.h" />
@@ -162,6 +163,7 @@
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Obj.h" />
     <ClInclude Include="Pikachu.h" />
+    <ClInclude Include="PikachuVolleyballMgr.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Scene.h" />
@@ -178,6 +180,7 @@
   <ItemGroup>
     <ClCompile Include="Archer.cpp" />
     <ClCompile Include="Arrow.cpp" />
+    <ClCompile Include="Ball.cpp" />
     <ClCompile Include="CMonster.cpp" />
     <ClCompile Include="CScrollMgr.cpp" />
     <ClCompile Include="DeadArrow.cpp" />
@@ -188,6 +191,7 @@
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Obj.cpp" />
     <ClCompile Include="Pikachu.cpp" />
+    <ClCompile Include="PikachuVolleyballMgr.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="ShotPutBall.cpp" />

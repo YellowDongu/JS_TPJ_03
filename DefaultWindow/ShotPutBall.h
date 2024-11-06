@@ -14,7 +14,7 @@ public:
 
 public:
 	void		Set_Player(CObj* pPlayer) { m_pPlayer = pPlayer; }
-
+	void LateUpdate() override;
 
 private:
 	CObj* m_pPlayer;

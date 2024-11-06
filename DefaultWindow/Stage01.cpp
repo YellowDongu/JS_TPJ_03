@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Stage01.h"
 
+#include "Ball.h"
 #include "KeyManager.h"
 #include "Obj.h"
 #include "Pikachu.h"
@@ -12,14 +13,19 @@ CStage01::CStage01(): mKeyManager(nullptr)
 
 CStage01::~CStage01()
 {
-	CStage01::Release();
+	//CStage01::Release();
 }
 
 void CStage01::Initialize()
 {
 	mKeyManager = KeyManager::Get_Instance();
 	// Objects 추가하기
-	mObjects.push_back(new Pikachu());
+	Pikachu* p1 = new Pikachu(0);
+	Pikachu* p2 = new Pikachu(1);
+	mObjects.push_back(p1);
+	mObjects.push_back(p2);
+	mObjects.push_back(new Ball(p1, p2));
+
 	for(auto& obj : mObjects)
 	{
 		obj->Initialize();
