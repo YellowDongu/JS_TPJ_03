@@ -3,6 +3,7 @@
 #include "KeyManager.h"
 #include "ShotPutPlayer.h"
 #include "CScrollMgr.h"
+#include "CBmpMgr.h"
 
 CShotPutBall::CShotPutBall() : m_fXScale(0.f), m_fYScale(0.f), m_pPlayer(nullptr), m_fSpeedCrashBoundary(0.f)
 {
@@ -22,6 +23,9 @@ void CShotPutBall::Initialize()
 
 void CShotPutBall::Update()
 {
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"", L"");
+
+
 	if (m_fSpeed > 0.0f)
 	{
 		m_fSpeed -= 0.1f;
@@ -45,14 +49,21 @@ void CShotPutBall::Update()
 			if (m_fXScale < 1.0f)
 			{
 				m_fXScale = 1.0f;
+				// 스코어 계산
+				
 			}
 			if (m_fYScale < 1.0f)
 			{
 				m_fYScale = 1.0f;
+				// 스코어 계산
 			}
 		}
 	}
-	
+
+	m_fScore = sqrtf(powf(m_pPlayer->Get_Info().vPos.x - m_tInfo.vPos.x, 2) + powf(m_pPlayer->Get_Info().vPos.y - m_tInfo.vPos.y, 2));
+
+	if(m_tInfo.vPos.x < 300.f)
+		m_fScore = 0.f;
 }
 
 void CShotPutBall::LateUpdate()
@@ -91,6 +102,11 @@ void CShotPutBall::Render(HDC hDC)
 	}
 	
 	Ellipse(hDC, vecVertx[0].x, vecVertx[0].y, vecVertx[1].x, vecVertx[1].y);
+
+	// 스코어 출력
+	TCHAR szScore[64] = L"";
+	swprintf_s(szScore, L"Score : %.2f", m_fScore);
+	TextOut(hDC, 1, 1, szScore, wcslen(szScore));
 }
 
 void CShotPutBall::Release()
@@ -107,4 +123,9 @@ void CShotPutBall::SetMatrix()
 	D3DXMatrixTranslation(&matTrans, m_tInfo.vPos.x, m_tInfo.vPos.y, 0.f);
 
 	m_tInfo.matWorld = matScale * matRot * matTrans;
+}
+
+void CShotPutBall::ScoreCal()
+{
+
 }

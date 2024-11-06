@@ -12,5 +12,10 @@ public:
 	void LateUpdate() override;
 	void Render(HDC hDC) override;
 	void Release() override;
+
+private:
+	D3DXVECTOR3 m_vUpLine[2];
+	D3DXVECTOR3 m_vDownLine[2];
+	D3DXVECTOR3 m_vStartStand[2];
 };
 

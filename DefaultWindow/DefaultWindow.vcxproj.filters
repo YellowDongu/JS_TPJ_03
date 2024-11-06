@@ -52,12 +52,6 @@
     <Filter Include="04. Manager\01. KeyInput">
       <UniqueIdentifier>{503907d6-889a-417d-9e2b-bd262e931d32}</UniqueIdentifier>
     </Filter>
-    <Filter Include="01. Obj\ShotPutPlayer">
-      <UniqueIdentifier>{a7794e7d-93fc-4b6e-b6a3-844a359913a1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\ShotPutBall">
-      <UniqueIdentifier>{5bf84c86-7f3d-4777-aad8-e915dfed50b3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03. Stages\Stage 01\00. Pikachu">
       <UniqueIdentifier>{15d466a7-e3ba-40c3-acc8-65f930da7e6a}</UniqueIdentifier>
     </Filter>
@@ -69,6 +63,15 @@
     </Filter>
     <Filter Include="04. Manager\04. Scroll">
       <UniqueIdentifier>{7afc0f22-c36c-4f51-b647-259f3747c048}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Stages\Stage 03\ShotPutPlayer">
+      <UniqueIdentifier>{a7794e7d-93fc-4b6e-b6a3-844a359913a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Stages\Stage 03\ShotPutBall">
+      <UniqueIdentifier>{5bf84c86-7f3d-4777-aad8-e915dfed50b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Stages\Stage 03\ShotPutStadium">
+      <UniqueIdentifier>{3c720552-85bb-4fdd-afc6-ae45d966c251}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -96,15 +99,6 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TimeManager.h" />
-    <ClInclude Include="ShotPutBall.h">
-      <Filter>Stage3</Filter>
-    </ClInclude>
-    <ClInclude Include="ShotPutPlayer.h">
-      <Filter>Stage3</Filter>
-    </ClInclude>
-    <ClInclude Include="ShotPutStadium.h">
-      <Filter>Stage3</Filter>
-    </ClInclude>
     <ClInclude Include="Stage03.h">
       <Filter>03. Stages\Stage 03</Filter>
     </ClInclude>
@@ -158,6 +152,15 @@
     </ClInclude>
     <ClInclude Include="CMyBmp.h">
       <Filter>04. Manager\02. Bmp</Filter>
+    </ClInclude>
+    <ClInclude Include="ShotPutBall.h">
+      <Filter>03. Stages\Stage 03\ShotPutBall</Filter>
+    </ClInclude>
+    <ClInclude Include="ShotPutPlayer.h">
+      <Filter>03. Stages\Stage 03\ShotPutPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="ShotPutStadium.h">
+      <Filter>03. Stages\Stage 03\ShotPutStadium</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -219,10 +222,10 @@
       <Filter>03. Stages\Stage 02</Filter>
     </ClCompile>
     <ClCompile Include="ShotPutPlayer.cpp">
-      <Filter>01. Obj\ShotPutPlayer</Filter>
+      <Filter>03. Stages\Stage 03\ShotPutPlayer</Filter>
     </ClCompile>
     <ClCompile Include="ShotPutBall.cpp">
-      <Filter>01. Obj\ShotPutBall</Filter>
+      <Filter>03. Stages\Stage 03\ShotPutBall</Filter>
     </ClCompile>
     <ClCompile Include="CBmpMgr.cpp">
       <Filter>04. Manager\02. Bmp</Filter>
@@ -236,6 +239,9 @@
     <ClCompile Include="CMyBmp.cpp">
       <Filter>04. Manager\02. Bmp</Filter>
     </ClCompile>
+    <ClCompile Include="ShotPutStadium.cpp">
+      <Filter>03. Stages\Stage 03\ShotPutStadium</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="DefaultWindow.ico" />
@@ -248,5 +254,10 @@
     <Filter Include="Stage3">
       <UniqueIdentifier>{3ab3712c-a336-4509-9979-e60c0966b1af}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DefaultWindow.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

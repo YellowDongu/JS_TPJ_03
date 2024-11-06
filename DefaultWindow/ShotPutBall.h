@@ -18,8 +18,10 @@ public:
 
 private:
 	void		SetMatrix();
+	void		ScoreCal();
 
 private:
+	float m_fScore;
 	float m_fSpeedCrashBoundary;
 	float m_fXScale;
 	float m_fYScale;
