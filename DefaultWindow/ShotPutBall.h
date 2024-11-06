@@ -16,8 +16,13 @@ public:
 public:
 	void		Set_Player(CObj* pPlayer) { m_pPlayer = pPlayer; }
 
+private:
+	void		SetMatrix();
 
 private:
+	float m_fSpeedCrashBoundary;
+	float m_fXScale;
+	float m_fYScale;
 	CObj* m_pPlayer;
 
 };

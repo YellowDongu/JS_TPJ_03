@@ -172,6 +172,7 @@
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="ShotPutBall.h" />
     <ClInclude Include="ShotPutPlayer.h" />
+    <ClInclude Include="ShotPutStadium.h" />
     <ClInclude Include="SoundMgr.h" />
     <ClInclude Include="Stage01.h" />
     <ClInclude Include="Stage02.h" />
@@ -199,6 +200,7 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="ShotPutBall.cpp" />
     <ClCompile Include="ShotPutPlayer.cpp" />
+    <ClCompile Include="ShotPutStadium.cpp" />
     <ClCompile Include="SoundMgr.cpp" />
     <ClCompile Include="Stage01.cpp" />
     <ClCompile Include="Stage02.cpp" />

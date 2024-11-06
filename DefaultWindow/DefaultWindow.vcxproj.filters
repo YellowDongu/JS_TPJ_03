@@ -75,35 +75,35 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="Archer.h" />
+    <ClInclude Include="Arrow.h" />
+    <ClInclude Include="CScrollMgr.h" />
+    <ClInclude Include="GameSelectButton.h" />
+    <ClInclude Include="CMonster.h" />
+    <ClInclude Include="DefaultWindow.h" />
+    <ClInclude Include="Define.h" />
+    <ClInclude Include="KeyManager.h" />
+    <ClInclude Include="MainGame.h" />
+    <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="Obj.h" />
+    <ClInclude Include="Pikachu.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="Stage01.h" />
+    <ClInclude Include="Stage02.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TimeManager.h" />
+    <ClInclude Include="ShotPutBall.h">
+      <Filter>Stage3</Filter>
     </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="ShotPutPlayer.h">
+      <Filter>Stage3</Filter>
     </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="DefaultWindow.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="MainGame.h">
-      <Filter>00. MainGame</Filter>
-    </ClInclude>
-    <ClInclude Include="Define.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Obj.h">
-      <Filter>01. Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>01. Obj\00. Player</Filter>
-    </ClInclude>
-    <ClInclude Include="CMonster.h">
-      <Filter>01. Obj\01. Monster</Filter>
-    </ClInclude>
-    <ClInclude Include="MainMenu.h">
-      <Filter>03. Stages\MainMenu</Filter>
+    <ClInclude Include="ShotPutStadium.h">
+      <Filter>Stage3</Filter>
     </ClInclude>
     <ClInclude Include="Stage03.h">
       <Filter>03. Stages\Stage 03</Filter>
@@ -238,16 +238,15 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="DefaultWindow.rc">
-      <Filter>리소스 파일</Filter>
-    </ResourceCompile>
+    <Image Include="DefaultWindow.ico" />
+    <Image Include="small.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="small.ico">
-      <Filter>리소스 파일</Filter>
-    </Image>
-    <Image Include="DefaultWindow.ico">
-      <Filter>리소스 파일</Filter>
-    </Image>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Stage3">
+      <UniqueIdentifier>{3ab3712c-a336-4509-9979-e60c0966b1af}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
