@@ -20,8 +20,10 @@ public:
 
 	D3DXVECTOR3 GetLeftTop();
 	D3DXVECTOR3 GetRightBottom();
+	bool IsSmash() const { return mSmash; }
 
 	D3DXVECTOR3* GetVertices() { return mVertices; }
+	void StartGame();
 	void AddScore(const int score) { mScore += score; }
 	void Move();
 	void HandleVelocityInput();
@@ -36,5 +38,7 @@ private:
 	float mHeight;
 	int mScore;
 	bool mSliding;
+	bool mSmash;
+	bool mJump;
 };
 
