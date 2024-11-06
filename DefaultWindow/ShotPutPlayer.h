@@ -11,7 +11,7 @@ public:
 	void Update() override;
 	void Render(HDC hDC) override;
 	void Release() override;
-
+	void LateUpdate() override;
 public:
 	void	SetAngle(float fAngle) { m_fAngle = fAngle; }
 	void	SetRotSpeed(float fRotSpeed) { m_fRotSpeed = fRotSpeed; }
@@ -19,6 +19,7 @@ public:
 	void	SetXSacle(float fXSacle) { m_fXSacle = fXSacle; }
 	void	SetYSacle(float fYSacle) { m_fYSacle = fYSacle; }
 
+	bool	GetIsRot() { return m_bIsRot; }
 	float	GetAngle() { return m_fAngle; }
 	float	GetRotSpeed() { return m_fRotSpeed; }
 	float	GetPosinAngle() { return m_fPosinAngle; }
@@ -30,8 +31,8 @@ private:
 	void KeyInput();
 	void SetMatrix();
 
-
 private:
+	bool m_bIsRot;
 	float m_fAngle;
 	float m_fRotSpeed;
 	float m_fPosinAngle;
@@ -40,5 +41,7 @@ private:
 	D3DXMATRIX matScale;
 	D3DXMATRIX matRotZ;
 	D3DXMATRIX matTrans;
+
+
 };
 

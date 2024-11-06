@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "Stage03.h"
-
+#include "KeyManager.h"
 
 CStage03::CStage03() : m_pPlayer(nullptr), m_pShotPutBall(nullptr)
 {
@@ -37,6 +37,10 @@ void CStage03::Update()
 
 void CStage03::LateUpdate()
 {
+	m_pPlayer->LateUpdate();
+	m_pShotPutBall->LateUpdate();
+
+	KeyManager::Get_Instance()->Update_Key();
 }
 
 void CStage03::Render(HDC _hdc)

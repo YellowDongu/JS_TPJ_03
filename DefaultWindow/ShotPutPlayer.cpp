@@ -1,8 +1,9 @@
 #include "stdafx.h"
 #include "ShotPutPlayer.h"
 #include "KeyManager.h"
+#include "CScrollMgr.h"
 
-CShotPutPlayer::CShotPutPlayer() : m_fAngle(0.f), m_fXSacle(1.f), m_fYSacle(1.f), m_fPosinAngle(0.f), m_fRotSpeed(0.f)
+CShotPutPlayer::CShotPutPlayer() : m_fAngle(0.f), m_fXSacle(1.f), m_fYSacle(1.f), m_fPosinAngle(0.f), m_fRotSpeed(0.f), m_bIsRot(false)
 {
 }
 
@@ -26,14 +27,19 @@ void CShotPutPlayer::Update()
 	SetMatrix();
 }
 
+void CShotPutPlayer::LateUpdate()
+{
+
+}
+
 void CShotPutPlayer::Render(HDC hDC)
 {
 	// 사각형의 꼭지점
 	D3DXVECTOR3 vecVertx[4] = {
-		   { -50.f,  50.f, 0.f },
-		   { -50.f, -50.f, 0.f },
-		   {  50.f, -50.f, 0.f },
-		   {  50.f,  50.f, 0.f },
+		   { -15.f,  15.f, 0.f },
+		   { -15.f, -15.f, 0.f },
+		   {  15.f, -15.f, 0.f },
+		   {  15.f,  15.f, 0.f },
 	};
 
 	// 각 꼭지점에 회전 변환 적용
@@ -55,8 +61,8 @@ void CShotPutPlayer::Render(HDC hDC)
 	// 포신
 	D3DXVECTOR3 vecStart = m_tInfo.vPos;
 	D3DXVECTOR3 vecEnd = {
-		m_tInfo.vPos.x + cosf(D3DXToRadian(m_fAngle + m_fPosinAngle)) * 100.f * m_fXSacle,
-		m_tInfo.vPos.y - sinf(D3DXToRadian(m_fAngle + m_fPosinAngle)) * 100.f * m_fYSacle,
+		m_tInfo.vPos.x + cosf(D3DXToRadian(m_fAngle + m_fPosinAngle)) * 40.f * m_fXSacle,
+		m_tInfo.vPos.y - sinf(D3DXToRadian(m_fAngle + m_fPosinAngle)) * 40.f * m_fYSacle,
 		0.f
 	};
 
@@ -70,7 +76,13 @@ void CShotPutPlayer::Release()
 
 void CShotPutPlayer::KeyInput()
 {
-	if (KeyManager::Get_Instance()->Key_Pressing(VK_LBUTTON))
+	if (KeyManager::Get_Instance()->Key_Up(VK_RBUTTON))
+	{
+		m_bIsRot = true;
+		// 던지기
+	}
+
+	if (KeyManager::Get_Instance()->Key_Pressing(VK_RBUTTON) && !m_bIsRot)
 	{
 		if (m_fRotSpeed > 15.5f)
 		{
@@ -87,6 +99,7 @@ void CShotPutPlayer::KeyInput()
 			// 비트맵이 문제인데
 			// 라인투 무브투로 하고있는데 거기다가 비트맵을 어떻게 그려넣지? ㅋㅋ
 			// 모르겠다 ㅋㅋ
+			m_bIsRot = true;
 		}
 		else
 		{
@@ -104,3 +117,5 @@ void CShotPutPlayer::SetMatrix()
 	D3DXMatrixTranslation(&matTrans, m_tInfo.vPos.x, m_tInfo.vPos.y, m_tInfo.vPos.z); // 위치
 	m_tInfo.matWorld = matScale * matRotZ * matTrans;
 }
+
+

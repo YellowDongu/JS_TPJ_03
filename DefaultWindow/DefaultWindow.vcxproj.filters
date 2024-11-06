@@ -1,224 +1,85 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="소스 파일">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="헤더 파일">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="리소스 파일">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="00. MainGame">
-      <UniqueIdentifier>{b53f0828-0d71-47cd-a6cc-6708f27b9bea}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj">
-      <UniqueIdentifier>{91b0fa53-1c43-40fe-bf82-575ed6b2eb97}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\00. Player">
-      <UniqueIdentifier>{69c9051e-480c-4564-97a3-80d61b486af2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\01. Monster">
-      <UniqueIdentifier>{1146025a-7e75-430b-b735-99a2400c2f45}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. Scene">
-      <UniqueIdentifier>{eec4e652-0d8f-4936-834c-34c7ade77b85}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Stages">
-      <UniqueIdentifier>{8c71f054-2f50-4e94-b290-a4db8bfb73c2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Stages\Stage 01">
-      <UniqueIdentifier>{a73d72dc-6a12-483d-acbd-db36600bc165}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Stages\Stage 02">
-      <UniqueIdentifier>{8858b372-38a0-4af2-8b57-f58be8cbd84f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Stages\Stage 03">
-      <UniqueIdentifier>{68f39a31-b233-4566-8778-2641558d46f3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Stages\MainMenu">
-      <UniqueIdentifier>{9fe9571f-4cee-471d-a9d9-857142852b19}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="04. Manager">
-      <UniqueIdentifier>{5d5aa675-94d5-491b-9a3c-9d77e18e84ff}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="04. Manager\00. Time">
-      <UniqueIdentifier>{671f3ca0-38d1-4e20-8353-a093ad72c0bc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="04. Manager\01. KeyInput">
-      <UniqueIdentifier>{503907d6-889a-417d-9e2b-bd262e931d32}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\ShotPutPlayer">
-      <UniqueIdentifier>{a7794e7d-93fc-4b6e-b6a3-844a359913a1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\ShotPutBall">
-      <UniqueIdentifier>{5bf84c86-7f3d-4777-aad8-e915dfed50b3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Stages\Stage 01\00. Pikachu">
-      <UniqueIdentifier>{15d466a7-e3ba-40c3-acc8-65f930da7e6a}</UniqueIdentifier>
-    </Filter>
+    <ClCompile Include="Archer.cpp" />
+    <ClCompile Include="Arrow.cpp" />
+    <ClCompile Include="CMonster.cpp" />
+    <ClCompile Include="CScrollMgr.cpp" />
+    <ClCompile Include="DefaultWindow.cpp" />
+    <ClCompile Include="GameSelectButton.cpp" />
+    <ClCompile Include="KeyManager.cpp" />
+    <ClCompile Include="MainGame.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="Obj.cpp" />
+    <ClCompile Include="Pikachu.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="Stage01.cpp" />
+    <ClCompile Include="Stage02.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="TimeManager.cpp" />
+    <ClCompile Include="ShotPutBall.cpp">
+      <Filter>Stage3</Filter>
+    </ClCompile>
+    <ClCompile Include="ShotPutPlayer.cpp">
+      <Filter>Stage3</Filter>
+    </ClCompile>
+    <ClCompile Include="ShotPutStadium.cpp">
+      <Filter>Stage3</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage03.cpp">
+      <Filter>Stage3</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Archer.h" />
+    <ClInclude Include="Arrow.h" />
+    <ClInclude Include="CScrollMgr.h" />
+    <ClInclude Include="GameSelectButton.h" />
+    <ClInclude Include="CMonster.h" />
+    <ClInclude Include="DefaultWindow.h" />
+    <ClInclude Include="Define.h" />
+    <ClInclude Include="KeyManager.h" />
+    <ClInclude Include="MainGame.h" />
+    <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="Obj.h" />
+    <ClInclude Include="Pikachu.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="Stage01.h" />
+    <ClInclude Include="Stage02.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TimeManager.h" />
+    <ClInclude Include="ShotPutBall.h">
+      <Filter>Stage3</Filter>
+    </ClInclude>
+    <ClInclude Include="ShotPutPlayer.h">
+      <Filter>Stage3</Filter>
+    </ClInclude>
+    <ClInclude Include="ShotPutStadium.h">
+      <Filter>Stage3</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage03.h">
+      <Filter>Stage3</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DefaultWindow.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="DefaultWindow.ico" />
+    <Image Include="small.ico" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="DefaultWindow.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="MainGame.h">
-      <Filter>00. MainGame</Filter>
-    </ClInclude>
-    <ClInclude Include="Define.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Obj.h">
-      <Filter>01. Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>01. Obj\00. Player</Filter>
-    </ClInclude>
-    <ClInclude Include="CMonster.h">
-      <Filter>01. Obj\01. Monster</Filter>
-    </ClInclude>
-    <ClInclude Include="MainMenu.h">
-      <Filter>03. Stages\MainMenu</Filter>
-    </ClInclude>
-    <ClInclude Include="Stage03.h">
-      <Filter>03. Stages\Stage 03</Filter>
-    </ClInclude>
-    <ClInclude Include="Stage01.h">
-      <Filter>03. Stages\Stage 01</Filter>
-    </ClInclude>
-    <ClInclude Include="Stage02.h">
-      <Filter>03. Stages\Stage 02</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneManager.h">
-      <Filter>02. Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene.h">
-      <Filter>02. Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="TimeManager.h">
-      <Filter>04. Manager\00. Time</Filter>
-    </ClInclude>
-    <ClInclude Include="GameSelectButton.h">
-      <Filter>03. Stages\MainMenu</Filter>
-    </ClInclude>
-    <ClInclude Include="KeyManager.h">
-      <Filter>04. Manager\01. KeyInput</Filter>
-    </ClInclude>
-    <ClInclude Include="Pikachu.h">
-      <Filter>03. Stages\Stage 01\00. Pikachu</Filter>
-    <ClInclude Include="Archer.h">
-      <Filter>03. Stages\Stage 02</Filter>
-    </ClInclude>
-    <ClInclude Include="Arrow.h">
-      <Filter>03. Stages\Stage 02</Filter>
-    </ClInclude>
-    <ClInclude Include="CScrollMgr.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="KeyManager.h">
-      <Filter>04. Manager\01. KeyInput</Filter>
-    </ClInclude>
-    <ClInclude Include="ShotPutPlayer.h">
-      <Filter>01. Obj\ShotPutPlayer</Filter>
-    </ClInclude>
-    <ClInclude Include="ShotPutBall.h">
-      <Filter>01. Obj\ShotPutBall</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="DefaultWindow.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="MainGame.cpp">
-      <Filter>00. MainGame</Filter>
-    </ClCompile>
-    <ClCompile Include="Obj.cpp">
-      <Filter>01. Obj</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>01. Obj\00. Player</Filter>
-    </ClCompile>
-    <ClCompile Include="CMonster.cpp">
-      <Filter>01. Obj\01. Monster</Filter>
-    </ClCompile>
-    <ClCompile Include="MainMenu.cpp">
-      <Filter>03. Stages\MainMenu</Filter>
-    </ClCompile>
-    <ClCompile Include="Stage03.cpp">
-      <Filter>03. Stages\Stage 03</Filter>
-    </ClCompile>
-    <ClCompile Include="Stage01.cpp">
-      <Filter>03. Stages\Stage 01</Filter>
-    </ClCompile>
-    <ClCompile Include="Stage02.cpp">
-      <Filter>03. Stages\Stage 02</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneManager.cpp">
-      <Filter>02. Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene.cpp">
-      <Filter>02. Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="TimeManager.cpp">
-      <Filter>04. Manager\00. Time</Filter>
-    </ClCompile>
-    <ClCompile Include="GameSelectButton.cpp">
-      <Filter>03. Stages\MainMenu</Filter>
-    </ClCompile>
-    <ClCompile Include="KeyManager.cpp">
-      <Filter>04. Manager\01. KeyInput</Filter>
-    </ClCompile>
-    <ClCompile Include="Pikachu.cpp">
-      <Filter>03. Stages\Stage 01\00. Pikachu</Filter>
-    <ClCompile Include="Archer.cpp">
-      <Filter>03. Stages\Stage 02</Filter>
-    </ClCompile>
-    <ClCompile Include="Arrow.cpp">
-      <Filter>03. Stages\Stage 02</Filter>
-    </ClCompile>
-    <ClCompile Include="CScrollMgr.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="KeyManager.cpp">
-      <Filter>04. Manager\01. KeyInput</Filter>
-    </ClCompile>
-    <ClCompile Include="ShotPutPlayer.cpp">
-      <Filter>01. Obj\ShotPutPlayer</Filter>
-    </ClCompile>
-    <ClCompile Include="ShotPutBall.cpp">
-      <Filter>01. Obj\ShotPutBall</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="DefaultWindow.rc">
-      <Filter>리소스 파일</Filter>
-    </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="small.ico">
-      <Filter>리소스 파일</Filter>
-    </Image>
-    <Image Include="DefaultWindow.ico">
-      <Filter>리소스 파일</Filter>
-    </Image>
+    <Filter Include="Stage3">
+      <UniqueIdentifier>{3ab3712c-a336-4509-9979-e60c0966b1af}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
