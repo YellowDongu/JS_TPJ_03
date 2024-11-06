@@ -61,6 +61,9 @@
     <Filter Include="03. Stages\Stage 01\00. Pikachu">
       <UniqueIdentifier>{15d466a7-e3ba-40c3-acc8-65f930da7e6a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Stages\Stage 01\01. Ball">
+      <UniqueIdentifier>{75ba614d-4b8d-435d-be90-2cccb636e9bc}</UniqueIdentifier>
+    </Filter>
     <Filter Include="04. Manager\02. Bmp">
       <UniqueIdentifier>{d1971e10-1151-450a-a747-63dd70128591}</UniqueIdentifier>
     </Filter>
@@ -147,6 +150,12 @@
     <ClInclude Include="ShotPutBall.h">
       <Filter>01. Obj\ShotPutBall</Filter>
     </ClInclude>
+    <ClInclude Include="Ball.h">
+      <Filter>03. Stages\Stage 01\01. Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="PikachuVolleyballMgr.h">
+      <Filter>03. Stages\Stage 01</Filter>
+    </ClInclude>
     <ClInclude Include="CBmpMgr.h">
       <Filter>04. Manager\02. Bmp</Filter>
     </ClInclude>
@@ -223,6 +232,12 @@
     </ClCompile>
     <ClCompile Include="ShotPutBall.cpp">
       <Filter>01. Obj\ShotPutBall</Filter>
+    </ClCompile>
+    <ClCompile Include="Ball.cpp">
+      <Filter>03. Stages\Stage 01\01. Ball</Filter>
+    </ClCompile>
+    <ClCompile Include="PikachuVolleyballMgr.cpp">
+      <Filter>03. Stages\Stage 01</Filter>
     </ClCompile>
     <ClCompile Include="CBmpMgr.cpp">
       <Filter>04. Manager\02. Bmp</Filter>
