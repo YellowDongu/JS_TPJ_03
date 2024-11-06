@@ -57,9 +57,9 @@ void CStage03::LateUpdate()
 
 void CStage03::Render(HDC _hdc)
 {
-	m_pShotPutStadium->Render(m_DC);
-	m_pPlayer->Render(m_DC);
-	m_pShotPutBall->Render(m_DC);
+	m_pShotPutStadium->Render(_hdc);
+	m_pPlayer->Render(_hdc);
+	m_pShotPutBall->Render(_hdc);
 }
 
 void CStage03::Release()
@@ -68,5 +68,5 @@ void CStage03::Release()
 	Safe_Delete<CObj*>(m_pShotPutBall);
 	Safe_Delete<CObj*>(m_pShotPutStadium);
 
-	ReleaseDC(g_hWnd, m_DC);
+	//ReleaseDC(g_hWnd, m_DC);
 }
