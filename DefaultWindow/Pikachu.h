@@ -22,6 +22,7 @@ public:
 	D3DXVECTOR3 GetRightBottom();
 
 	D3DXVECTOR3* GetVertices() { return mVertices; }
+	void AddScore(const int score) { mScore += score; }
 	void Move();
 	void HandleVelocityInput();
 	void UpdateVertex();
@@ -33,6 +34,7 @@ private:
 	float mAngle;
 	float mWidth;
 	float mHeight;
+	int mScore;
 	bool mSliding;
 };
 

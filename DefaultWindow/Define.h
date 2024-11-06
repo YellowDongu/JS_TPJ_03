@@ -30,6 +30,15 @@ enum CHANNELID
 	MAXCHANNEL
 };
 
+enum CollisionDirection
+{
+	NONE = 0,
+	LEFT = 1 << 0,       // 0001
+	RIGHT = 1 << 1,    // 0010
+	TOP = 1 << 2,       // 0100
+	BOTTOM = 1 << 3    // 1000
+};
+
 
 
 template<typename T>

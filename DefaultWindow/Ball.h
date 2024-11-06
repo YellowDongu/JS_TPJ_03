@@ -14,8 +14,11 @@ public:
 
 	void Collision();
 
+	CollisionDirection DetectBoxCollisionDir(const RECT& objRect, const RECT& otherRect);
+
 private:
 	D3DXVECTOR2 mVelocity;
+	D3DXVECTOR3 mPrevPosition;
 	Pikachu* mPlayer[2];
 	float mWidth;
 	float mHeight;

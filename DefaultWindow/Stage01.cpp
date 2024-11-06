@@ -46,6 +46,7 @@ void CStage01::LateUpdate()
 void CStage01::Render(HDC _hdc)
 {
 	RenderObjects(_hdc);
+	Rectangle(_hdc, WINCX / 2 - 10, WINCY - 250, WINCX / 2 + 10, WINCY);
 }
 
 void CStage01::Release()

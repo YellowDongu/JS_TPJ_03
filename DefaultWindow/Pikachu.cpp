@@ -7,7 +7,8 @@
 #include "KeyManager.h"
 #include "TimeManager.h"
 
-Pikachu::Pikachu(int type): mType(static_cast<PlayerType>(type)), mAngle(0), mWidth(0), mHeight(0), mSliding(false)
+Pikachu::Pikachu(int type): mType(static_cast<PlayerType>(type)), mAngle(0), mWidth(0), mHeight(0), mScore(0),
+                            mSliding(false)
 {
 }
 
