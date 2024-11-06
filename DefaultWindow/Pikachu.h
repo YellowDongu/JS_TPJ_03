@@ -18,8 +18,8 @@ public:
 	void Render(HDC hDC) override;
 	void Release() override;
 
-	D3DXVECTOR3 GetLeftTop() const { return mVertices[0]; }
-	D3DXVECTOR3 GetRightBottom() const { return mVertices[2]; }
+	D3DXVECTOR3 GetLeftTop();
+	D3DXVECTOR3 GetRightBottom();
 
 	D3DXVECTOR3* GetVertices() { return mVertices; }
 	void Move();
@@ -30,6 +30,7 @@ private:
 	PlayerType mType;
 	D3DXVECTOR2 mVelocity;
 	D3DXVECTOR3 mVertices[4];
+	float mAngle;
 	float mWidth;
 	float mHeight;
 	bool mSliding;

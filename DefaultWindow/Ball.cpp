@@ -49,13 +49,11 @@ void Ball::Update()
 		m_tInfo.vPos.x = WINCX - mWidth / 2.f;
 		mVelocity.x *= -1.f;
 	}
-
-	Collision();
 }
 
 void Ball::LateUpdate()
 {
-
+	Collision();
 }
 
 void Ball::Render(HDC hDC)
@@ -79,6 +77,15 @@ void Ball::Collision()
 		D3DXVECTOR3 dir = mPlayer[0]->Get_Info().vPos - m_tInfo.vPos;
 		D3DXVec3Normalize(&dir, &dir);
 		m_tInfo.vPos.y = mPlayer[0]->GetLeftTop().y - mHeight;
+		mVelocity.x = -dir.x * 500.f;
+		mVelocity.y = -dir.y * 1000.f;
+	}
+
+	if (IntersectRect(&temp, &p2, &ball))
+	{
+		D3DXVECTOR3 dir = mPlayer[1]->Get_Info().vPos - m_tInfo.vPos;
+		D3DXVec3Normalize(&dir, &dir);
+		m_tInfo.vPos.y = mPlayer[1]->GetLeftTop().y - mHeight;
 		mVelocity.x = -dir.x * 500.f;
 		mVelocity.y = -dir.y * 1000.f;
 	}

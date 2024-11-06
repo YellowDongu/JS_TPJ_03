@@ -1,10 +1,13 @@
 #include "stdafx.h"
 #include "Pikachu.h"
 
+#include <sstream>
+#include <string>
+
 #include "KeyManager.h"
 #include "TimeManager.h"
 
-Pikachu::Pikachu(int type): mType(static_cast<PlayerType>(type)), mWidth(0), mHeight(0), mSliding(false)
+Pikachu::Pikachu(int type): mType(static_cast<PlayerType>(type)), mAngle(0), mWidth(0), mHeight(0), mSliding(false)
 {
 }
 
@@ -46,15 +49,60 @@ void Pikachu::LateUpdate()
 
 void Pikachu::Render(HDC hDC)
 {
+	// 원하는 색상으로 펜 생성 (예: 빨간색)
+	HPEN hPen = CreatePen(PS_SOLID, 1, RGB(255, 0, 0));
+	HPEN hOldPen = (HPEN)SelectObject(hDC, hPen);
+
+	// 선 그리기
 	MoveToEx(hDC, static_cast<int>(mVertices[0].x), static_cast<int>(mVertices[0].y), nullptr);
 	LineTo(hDC, static_cast<int>(mVertices[1].x), static_cast<int>(mVertices[1].y));
+
+	// 원래 펜 복원 및 새 펜 삭제
+	SelectObject(hDC, hOldPen);
+	DeleteObject(hPen);
 	LineTo(hDC, static_cast<int>(mVertices[2].x), static_cast<int>(mVertices[2].y));
 	LineTo(hDC, static_cast<int>(mVertices[3].x), static_cast<int>(mVertices[3].y));
 	LineTo(hDC, static_cast<int>(mVertices[0].x), static_cast<int>(mVertices[0].y));
+
+	SetTextColor(hDC, RGB(0, 255, 0));
+
+	SetBkMode(hDC, TRANSPARENT);
+
+	// 좌표값을 문자열로 변환
+	std::wstringstream ss;
+	ss << L"Position: (" << GetLeftTop().x << L", " << GetLeftTop().y << L")";
+	std::wstring positionText = ss.str();
+
+	switch (mType)
+	{
+	case PLAYER01:
+		TextOut(hDC, 100, 100, positionText.c_str(), positionText.length());
+		break;
+	case PLAYER02:
+		TextOut(hDC, 600, 100, positionText.c_str(), positionText.length());
+		break;
+	}
+
 }
 
 void Pikachu::Release()
 {
+}
+
+D3DXVECTOR3 Pikachu::GetLeftTop()
+{
+	float left = (std::min)({ mVertices[0].x,mVertices[1].x,mVertices[2].x ,mVertices[3].x });
+	float top = (std::min)({ mVertices[0].y, mVertices[1].y,mVertices[2].y,mVertices[3].y });
+	D3DXVECTOR3 leftTop = { left,top,0 };
+	return leftTop;
+}
+
+D3DXVECTOR3 Pikachu::GetRightBottom()
+{
+	float right = (std::max)({ mVertices[0].x,mVertices[1].x,mVertices[2].x ,mVertices[3].x });
+	float bottom = (std::max)({ mVertices[0].y, mVertices[1].y,mVertices[2].y,mVertices[3].y });
+	D3DXVECTOR3 rightBottom = { right,bottom,0 };
+	return rightBottom;
 }
 
 void Pikachu::Move()
@@ -132,6 +180,7 @@ void Pikachu::HandleVelocityInput()
 			{
 				// 슬라이딩
 				mSliding = true;
+				mAngle = -90.f;
 				mVelocity.x = -400.f;
 				mVelocity.y = -250.f;
 			}
@@ -148,6 +197,7 @@ void Pikachu::HandleVelocityInput()
 			{
 				// 슬라이딩
 				mSliding = true;
+				mAngle = 90.f;
 				mVelocity.x = 400.f;
 				mVelocity.y = -250.f;
 			}
@@ -185,12 +235,34 @@ void Pikachu::HandleVelocityInput()
 
 		if (KeyManager::Get_Instance()->Key_Pressing(VK_LEFT))
 		{
-			mVelocity.x = -250.f;
+			if (KeyManager::Get_Instance()->Key_Down(VK_RETURN))
+			{
+				// 슬라이딩
+				mSliding = true;
+				mVelocity.x = -400.f;
+				mVelocity.y = -250.f;
+			}
+
+			else
+			{
+				mVelocity.x = -250.f;
+			}
 		}
 
 		else if (KeyManager::Get_Instance()->Key_Pressing(VK_RIGHT))
 		{
-			mVelocity.x = 250.f;
+			if (KeyManager::Get_Instance()->Key_Down(VK_RETURN))
+			{
+				// 슬라이딩
+				mSliding = true;
+				mVelocity.x = 400.f;
+				mVelocity.y = -250.f;
+			}
+
+			else
+			{
+				mVelocity.x = 250.f;
+			}
 		}
 
 		else
@@ -211,14 +283,8 @@ void Pikachu::UpdateVertex()
 	D3DXMATRIX		matScale, matRotZ, matTrans;
 
 	D3DXMatrixScaling(&matScale, 1.f, 1.f, 1.f);
-	if (mSliding)
-	{
-		D3DXMatrixRotationZ(&matRotZ, D3DXToRadian(90.f));
-	}
-	else
-	{
-		D3DXMatrixRotationZ(&matRotZ, D3DXToRadian(0));
-	}
+	D3DXMatrixRotationZ(&matRotZ, D3DXToRadian(mAngle));
+
 	D3DXMatrixTranslation(&matTrans, m_tInfo.vPos.x, m_tInfo.vPos.y, 0.f);
 
 	m_tInfo.matWorld = matScale * matRotZ * matTrans;
