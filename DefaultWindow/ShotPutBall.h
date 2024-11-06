@@ -24,5 +24,6 @@ private:
 	float m_fXScale;
 	float m_fYScale;
 	CObj* m_pPlayer;
+
 };
 

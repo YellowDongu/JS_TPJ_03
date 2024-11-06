@@ -59,7 +59,7 @@ void CShotPutBall::LateUpdate()
 {
 	if (static_cast<CShotPutPlayer*>(m_pPlayer)->GetIsRot())
 	{
-		// ÇöÀç m_tinfo.vpos¿¡ ¿À¸¥ÂÊ “‡Çâ ¹ı¼± º¤ÅÍ ¹æÇâÀ¸·Î ³¯¾Æ°¡°Ô ÇÑ´Ù.
+		// í˜„ì¬ m_tinfo.vposì— ì˜¤ë¥¸ìª½ Â“Â‡í–¥ ë²•ì„  ë²¡í„° ë°©í–¥ìœ¼ë¡œ ë‚ ì•„ê°€ê²Œ í•œë‹¤.
 		m_tInfo.vPos.x += cosf(D3DXToRadian((static_cast<CShotPutPlayer*>(m_pPlayer)->GetAngle() - 90.f))) * m_fSpeed;
 		m_tInfo.vPos.y -= sinf(D3DXToRadian((static_cast<CShotPutPlayer*>(m_pPlayer)->GetAngle() - 90.f))) * m_fSpeed;
 	}

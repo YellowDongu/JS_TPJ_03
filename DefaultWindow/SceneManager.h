@@ -9,12 +9,12 @@ private:
 
 public:
 	static void Instantiate();
+	static void Destroy();
 	void Initialize();
 	void Update();
 	void LateUpdate();
 	void Render(HDC _hdc);
 	void Release();
-	void Destroy();
 
 private:
 	vector<CScene*> m_Scenes;
