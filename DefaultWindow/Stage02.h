@@ -1,6 +1,7 @@
 #pragma once
 #include "Scene.h"
 #include "Archer.h"
+#include "DeadArrow.h"
 
 class CStage02 : public CScene
 {
@@ -17,9 +18,7 @@ public:
 private:
 	float power;
 
-
 	Archer* archer;
 	Arrow* arrow;
-
-
+	vector<DeadArrow*> deadArrows;
 };

@@ -117,6 +117,12 @@
     <ClInclude Include="Arrow.h">
       <Filter>03. Stages\Stage 02</Filter>
     </ClInclude>
+    <ClInclude Include="CScrollMgr.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DeadArrow.h">
+      <Filter>03. Stages\Stage 02</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -168,6 +174,12 @@
       <Filter>03. Stages\Stage 02</Filter>
     </ClCompile>
     <ClCompile Include="Arrow.cpp">
+      <Filter>03. Stages\Stage 02</Filter>
+    </ClCompile>
+    <ClCompile Include="CScrollMgr.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DeadArrow.cpp">
       <Filter>03. Stages\Stage 02</Filter>
     </ClCompile>
   </ItemGroup>
