@@ -71,6 +71,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(DXSDK_DIR)include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -151,6 +153,8 @@
   <ItemGroup>
     <ClInclude Include="Archer.h" />
     <ClInclude Include="Arrow.h" />
+    <ClInclude Include="CBmpMgr.h" />
+    <ClInclude Include="CMyBmp.h" />
     <ClInclude Include="CScrollMgr.h" />
     <ClInclude Include="DeadArrow.h" />
     <ClInclude Include="GameSelectButton.h" />
@@ -168,6 +172,7 @@
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="ShotPutBall.h" />
     <ClInclude Include="ShotPutPlayer.h" />
+    <ClInclude Include="SoundMgr.h" />
     <ClInclude Include="Stage01.h" />
     <ClInclude Include="Stage02.h" />
     <ClInclude Include="Stage03.h" />
@@ -178,7 +183,9 @@
   <ItemGroup>
     <ClCompile Include="Archer.cpp" />
     <ClCompile Include="Arrow.cpp" />
+    <ClCompile Include="CBmpMgr.cpp" />
     <ClCompile Include="CMonster.cpp" />
+    <ClCompile Include="CMyBmp.cpp" />
     <ClCompile Include="CScrollMgr.cpp" />
     <ClCompile Include="DeadArrow.cpp" />
     <ClCompile Include="DefaultWindow.cpp" />
@@ -192,6 +199,7 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="ShotPutBall.cpp" />
     <ClCompile Include="ShotPutPlayer.cpp" />
+    <ClCompile Include="SoundMgr.cpp" />
     <ClCompile Include="Stage01.cpp" />
     <ClCompile Include="Stage02.cpp" />
     <ClCompile Include="Stage03.cpp" />
