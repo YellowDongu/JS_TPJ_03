@@ -33,6 +33,7 @@ private:
 
 
 private:
+	bool m_bIsRot;
 	float m_fAngle;
 	float m_fRotSpeed;
 	float m_fPosinAngle;
@@ -41,6 +42,7 @@ private:
 	D3DXMATRIX matScale;
 	D3DXMATRIX matRotZ;
 	D3DXMATRIX matTrans;
+
 
 };
 
