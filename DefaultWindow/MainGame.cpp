@@ -4,7 +4,7 @@
 #include "KeyManager.h"
 #include "CScrollMgr.h"
 
-CMainGame::CMainGame() : m_DC(NULL)
+CMainGame::CMainGame() : m_DC(nullptr), m_hBit(nullptr), m_memDc(nullptr)
 {
 }
 
@@ -17,6 +17,11 @@ CMainGame::~CMainGame()
 void CMainGame::Initialize()
 {
 	m_DC = GetDC(g_hWnd);
+	m_hBit = CreateCompatibleBitmap(m_DC, WINCX, WINCY);
+	m_memDc = CreateCompatibleDC(m_DC);
+
+	HBITMAP hPrevBit = static_cast<HBITMAP>(SelectObject(m_memDc, m_hBit));
+	DeleteObject(hPrevBit);
 
 	CSceneManager::Instantiate();
 
@@ -30,9 +35,9 @@ void CMainGame::Update()
 
 void CMainGame::Render()
 {
-	Rectangle(m_DC, 0, 0, WINCX, WINCY);
-	sceneMgr->Render(m_DC);
-
+	Rectangle(m_memDc, 0, 0, WINCX, WINCY);
+	sceneMgr->Render(m_memDc);
+	BitBlt(m_DC, 0, 0, WINCX, WINCY, m_memDc, 0, 0, SRCCOPY);
 }
 
 void CMainGame::Release()

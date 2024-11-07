@@ -15,7 +15,7 @@ CShotPutPlayer::~CShotPutPlayer()
 
 void CShotPutPlayer::Initialize()
 {
-	// ¾ÆÁ÷ °ª ¾ÈÃ¤¿ö³ÖÀ½
+	// ì•„ì§ ê°’ ì•ˆì±„ì›Œë„£ìŒ
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"", L"");
 
 
@@ -39,7 +39,7 @@ void CShotPutPlayer::LateUpdate()
 
 void CShotPutPlayer::Render(HDC hDC)
 {
-	// »ç°¢ÇüÀÇ ²ÀÁöÁ¡
+	// ì‚¬ê°í˜•ì˜ ê¼­ì§€ì 
 	D3DXVECTOR3 vecVertx[4] = {
 		   { -15.f,  15.f, 0.f },
 		   { -15.f, -15.f, 0.f },
@@ -47,14 +47,14 @@ void CShotPutPlayer::Render(HDC hDC)
 		   {  15.f,  15.f, 0.f },
 	};
 
-	// °¢ ²ÀÁöÁ¡¿¡ È¸Àü º¯È¯ Àû¿ë
+	// ê° ê¼­ì§€ì ì— íšŒì „ ë³€í™˜ ì ìš©
 	for (int i = 0; i < 4; ++i)
 	{
-		// Çà·ÄÀÇ °ö
+		// í–‰ë ¬ì˜ ê³±
 		D3DXVec3TransformCoord(&vecVertx[i], &vecVertx[i], &m_tInfo.matWorld);
 	}
 
-	// »ç°¢Çü ±×¸®±â
+	// ì‚¬ê°í˜• ê·¸ë¦¬ê¸°
 	MoveToEx(hDC, vecVertx[0].x, vecVertx[0].y, nullptr);
 	for (int i = 1; i < 4; ++i)
 	{
@@ -63,7 +63,7 @@ void CShotPutPlayer::Render(HDC hDC)
 	LineTo(hDC, vecVertx[0].x, vecVertx[0].y);
 
 
-	// Æ÷½Å
+	// í¬ì‹ 
 	D3DXVECTOR3 vecStart = m_tInfo.vPos;
 	D3DXVECTOR3 vecEnd = {
 		m_tInfo.vPos.x + cosf(D3DXToRadian(m_fAngle + m_fPosinAngle)) * 40.f * m_fXSacle,
@@ -76,7 +76,7 @@ void CShotPutPlayer::Render(HDC hDC)
 	MoveToEx(hDC, vecStart.x, vecStart.y, nullptr);
 	LineTo(hDC, vecEnd.x, vecEnd.y);
 
-	// ½ºÄÚ¾î Ãâ·Â
+	// ìŠ¤ì½”ì–´ ì¶œë ¥
 	TCHAR szScore[64] = L"";
 	swprintf_s(szScore, L"%.2f", m_tInfo.vPos.x);
 	TextOut(hDC, 0, 0, szScore, wcslen(szScore));
@@ -91,7 +91,7 @@ void CShotPutPlayer::KeyInput()
 	if (KeyManager::Get_Instance()->Key_Up(VK_RBUTTON))
 	{
 		m_bIsRot = true;
-		// ´øÁö±â
+		// ë˜ì§€ê¸°
 	}
 
 	if (KeyManager::Get_Instance()->Key_Pressing(VK_RBUTTON) && !m_bIsRot)
@@ -111,8 +111,9 @@ void CShotPutPlayer::KeyInput()
 
 void CShotPutPlayer::SetMatrix()
 {
-	D3DXMatrixScaling(&matScale, m_fXSacle, m_fYSacle, 1.f); // Å©±â
-	D3DXMatrixRotationZ(&matRotZ, D3DXToRadian(-m_fAngle)); // È¸Àü
-	D3DXMatrixTranslation(&matTrans, m_tInfo.vPos.x, m_tInfo.vPos.y, m_tInfo.vPos.z); // À§Ä¡
+	D3DXMatrixScaling(&matScale, m_fXSacle, m_fYSacle, 1.f); // í¬ê¸°
+	D3DXMatrixRotationZ(&matRotZ, D3DXToRadian(-m_fAngle)); // íšŒì „
+	D3DXMatrixTranslation(&matTrans, m_tInfo.vPos.x, m_tInfo.vPos.y, m_tInfo.vPos.z); // ìœ„ì¹˜
 	m_tInfo.matWorld = matScale * matRotZ * matTrans;
 }
+

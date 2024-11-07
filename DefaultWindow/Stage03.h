@@ -2,8 +2,8 @@
 #include "Scene.h"
 #include "Define.h"
 #include "ShotPutPlayer.h"
-#include "CMonster.h"
 #include "ShotPutBall.h"
+#include "ShotPutStadium.h"
 
 class CStage03 : public CScene
 {
@@ -19,7 +19,8 @@ public:
 	void Release() override;
 
 private:
-	HDC			m_DC;
+	HDC		m_DC;
 	CObj* m_pPlayer;
 	CObj* m_pShotPutBall;
+	CObj* m_pShotPutStadium;
 };

@@ -18,5 +18,8 @@ public:
 
 private:
 	HDC			m_DC;
+	HBITMAP		m_hBit;
+	HDC			m_memDc;
+
 };
 
