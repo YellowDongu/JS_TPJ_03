@@ -2,6 +2,7 @@
 #include "MainMenu.h"
 #include "KeyManager.h"
 #include "CBmpMgr.h"
+#include "SoundMgr.h"
 
 #define bmpMgr CBmpMgr::Get_Instance()
 #define keyMgr KeyManager::Get_Instance()
@@ -27,6 +28,8 @@ void CMainMenu::Initialize()
 	buttons.push_back(newButton);
 	newButton->init(RECT{ 523, 388, 623, 488 });
 	bmpMgr->Insert_Bmp(L".\\Sprite\\MainMenu.bmp", L"MainMenu");
+	CSoundMgr::Get_Instance()->PlayBGM(L"MainBGM.wav", 0.5f);
+
 }
 
 void CMainMenu::Update()
@@ -74,5 +77,6 @@ void CMainMenu::Release()
 		delete button;
 	}
 	buttons.clear();
+	CSoundMgr::Get_Instance()->StopAll();
 }
 

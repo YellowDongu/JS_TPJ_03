@@ -5,6 +5,7 @@
 #include "CBmpMgr.h"
 #include "Pikachu.h"
 #include "TimeManager.h"
+#include "SoundMgr.h"
 
 Ball::Ball(Pikachu* p1, Pikachu* p2): mFadeBitmap(nullptr), mPlayer{p1, p2}, mWidth(0), mHeight(0), mOpacity(0),
                                       mFadeIn(false),
@@ -33,6 +34,8 @@ void Ball::Update()
 	// 바운더리 밖으로 못 벗어나게 설정
 	if (m_tInfo.vPos.y > 524 - mHeight / 2.f)
 	{
+		CSoundMgr::Get_Instance()->StopSound(SOUND_BALL);
+		CSoundMgr::Get_Instance()->PlaySoundW(L"Ball_Ground.wav", SOUND_BALL, 0.5f);
 		m_tInfo.vPos.y = 524 - mHeight / 2.f;
 		TimeManager::GetInstance().SlowMotion(0.1f, 5.f);
 		mFadeOut = true;

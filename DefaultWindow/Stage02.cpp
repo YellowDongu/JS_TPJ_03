@@ -22,8 +22,6 @@ CStage02::~CStage02()
 
 void CStage02::Initialize()
 {
-	// 이걸 MainGame에서 할 지 고민중
-	soundMgr->Initialize();
 
 	groundBrush = CreateSolidBrush(RGB(0, 200, 0));
 	groundPen = CreatePen(PS_SOLID, 2, RGB(0, 200, 0));
@@ -80,7 +78,7 @@ void CStage02::Update()
 
 void CStage02::LateUpdate()
 {
-	if (keyMgr->Key_Pressing(VK_RETURN))
+	if (keyMgr->Key_Pressing(VK_TAB))
 	{
 		m_bReturn = true;
 	}
@@ -179,7 +177,4 @@ void CStage02::Release()
 		delete deadArrow;
 	}
 	deadArrows.clear();
-
-	CScrollMgr::Destroy_Instance();
-	CSoundMgr::Destroy_Instance();
 }

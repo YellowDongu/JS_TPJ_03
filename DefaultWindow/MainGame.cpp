@@ -20,6 +20,7 @@ CMainGame::~CMainGame()
 void CMainGame::Initialize()
 {
 	CSoundMgr::Get_Instance()->Initialize();
+	
 	m_DC = GetDC(g_hWnd);
 	m_hBit = CreateCompatibleBitmap(m_DC, WINCX, WINCY);
 	m_memDc = CreateCompatibleDC(m_DC);
@@ -28,7 +29,6 @@ void CMainGame::Initialize()
 	DeleteObject(hPrevBit);
 
 	CSceneManager::Instantiate();
-	CSoundMgr::Get_Instance()->Initialize();
 
 }
 

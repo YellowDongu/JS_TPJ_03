@@ -7,6 +7,7 @@
 #include "CBmpMgr.h"
 #include "KeyManager.h"
 #include "TimeManager.h"
+#include "SoundMgr.h"
 
 Pikachu::Pikachu(int type): mClip{}, mState(IDLE), mType(static_cast<PlayerType>(type)), mAngle(0), mWidth(0), mHeight(0),
                             mCurrentAniTime(0),
@@ -86,31 +87,6 @@ void Pikachu::Render(HDC hDC)
 		128, 128,
 		RGB(127, 127, 127));
 
-
-
-	// 원하는 색상으로 펜 생성 (예: 빨간색)
-	HPEN hPen = CreatePen(PS_SOLID, 1, RGB(255, 0, 0));
-	HPEN hOldPen = (HPEN)SelectObject(hDC, hPen);
-
-	// 선 그리기
-	MoveToEx(hDC, static_cast<int>(mVertices[0].x), static_cast<int>(mVertices[0].y), nullptr);
-	LineTo(hDC, static_cast<int>(mVertices[1].x), static_cast<int>(mVertices[1].y));
-
-	// 원래 펜 복원 및 새 펜 삭제
-	SelectObject(hDC, hOldPen);
-	DeleteObject(hPen);
-	LineTo(hDC, static_cast<int>(mVertices[2].x), static_cast<int>(mVertices[2].y));
-	LineTo(hDC, static_cast<int>(mVertices[3].x), static_cast<int>(mVertices[3].y));
-	LineTo(hDC, static_cast<int>(mVertices[0].x), static_cast<int>(mVertices[0].y));
-
-	SetTextColor(hDC, RGB(0, 255, 0));
-
-	SetBkMode(hDC, TRANSPARENT);
-
-	// 좌표값을 문자열로 변환
-	std::wstringstream ss;
-	ss << L"Score : (" << mScore << L")";
-	std::wstring positionText = ss.str();
 
 	switch (mType)
 	{
@@ -305,6 +281,8 @@ void Pikachu::HandleVelocityInput()
 			if (!mJump && KeyManager::Get_Instance()->Key_Pressing('Z'))
 			{
 				// 슬라이딩
+				CSoundMgr::Get_Instance()->StopSound(SOUND_P1);
+				CSoundMgr::Get_Instance()->PlaySoundW(L"Pikachu_Jump.wav", SOUND_P1, 0.5f);
 				mState = SLIDING_FLIP;
 				mSliding = true;
 				mFrame = 0;
@@ -325,6 +303,8 @@ void Pikachu::HandleVelocityInput()
 			if (!mJump && KeyManager::Get_Instance()->Key_Pressing('Z'))
 			{
 				// 슬라이딩
+				CSoundMgr::Get_Instance()->StopSound(SOUND_P1);
+				CSoundMgr::Get_Instance()->PlaySoundW(L"Pikachu_Jump.wav", SOUND_P1, 0.5f);
 				mSliding = true;
 				mState = SLIDING;
 				mFrame = 0;
@@ -350,6 +330,8 @@ void Pikachu::HandleVelocityInput()
 
 		if (!mJump && KeyManager::Get_Instance()->Key_Pressing('R') && !mSliding)
 		{
+			CSoundMgr::Get_Instance()->StopSound(SOUND_P1);
+			CSoundMgr::Get_Instance()->PlaySoundW(L"Pikachu_Jump.wav", SOUND_P1, 0.5f);
 			mJump = true;
 			mState = JUMP;
 			mVelocity.y = -500.f;
@@ -357,10 +339,12 @@ void Pikachu::HandleVelocityInput()
 
 		if (mJump && KeyManager::Get_Instance()->Key_Pressing('Z'))
 		{
+			CSoundMgr::Get_Instance()->StopSound(SOUND_P1);
+			CSoundMgr::Get_Instance()->PlaySoundW(L"Pikachu_Smash.wav", SOUND_P1, 0.5f);
 			mSmash = true;
 		}
 
-		if (mJump && KeyManager::Get_Instance()->Key_Down('Z'))
+		if (mJump && KeyManager::Get_Instance()->Key_Up('Z'))
 		{
 			mSmash = false;
 		}
@@ -382,6 +366,8 @@ void Pikachu::HandleVelocityInput()
 			if (!mJump && KeyManager::Get_Instance()->Key_Pressing(VK_RETURN) && mVelocity.y == 0)
 			{
 				// 슬라이딩
+				CSoundMgr::Get_Instance()->StopSound(SOUND_P2);
+				CSoundMgr::Get_Instance()->PlaySoundW(L"Pikachu_Jump.wav", SOUND_P2, 0.5f);
 				mState = SLIDING_FLIP;
 				mSliding = true;
 				mFrame = 0;
@@ -402,6 +388,8 @@ void Pikachu::HandleVelocityInput()
 			if (!mJump && KeyManager::Get_Instance()->Key_Pressing(VK_RETURN) && mVelocity.y == 0)
 			{
 				// 슬라이딩
+				CSoundMgr::Get_Instance()->StopSound(SOUND_P2);
+				CSoundMgr::Get_Instance()->PlaySoundW(L"Pikachu_Jump.wav", SOUND_P2, 0.5f);
 				mSliding = true;
 				mState = SLIDING;
 				mFrame = 0;
@@ -427,6 +415,8 @@ void Pikachu::HandleVelocityInput()
 
 		if (!mJump && KeyManager::Get_Instance()->Key_Pressing(VK_UP) && !mSliding)
 		{
+			CSoundMgr::Get_Instance()->StopSound(SOUND_P2);
+			CSoundMgr::Get_Instance()->PlaySoundW(L"Pikachu_Jump.wav", SOUND_P2, 0.5f);
 			mJump = true;
 			mState = JUMP;
 			mVelocity.y = -500.f;
@@ -434,10 +424,12 @@ void Pikachu::HandleVelocityInput()
 
 		if (mJump && KeyManager::Get_Instance()->Key_Pressing(VK_RETURN))
 		{
+			CSoundMgr::Get_Instance()->StopSound(SOUND_P2);
+			CSoundMgr::Get_Instance()->PlaySoundW(L"Pikachu_Smash.wav", SOUND_P2, 0.5f);
 			mSmash = true;
 		}
 
-		if (mJump && KeyManager::Get_Instance()->Key_Down(VK_RETURN))
+		if (mJump && KeyManager::Get_Instance()->Key_Up(VK_RETURN))
 		{
 			mSmash = false;
 		}

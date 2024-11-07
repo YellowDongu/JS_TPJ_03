@@ -60,6 +60,10 @@ void CStage01::Update()
 void CStage01::LateUpdate()
 {
 	LateUpdateObjects();
+	if (mKeyManager->Key_Down(VK_TAB))
+	{
+		m_bReturn = true;
+	}
 	mKeyManager->Update_Key();
 }
 
@@ -79,6 +83,7 @@ void CStage01::Release()
 	{
 		delete obj;
 	}
+	CSoundMgr::Get_Instance()->StopAll();
 }
 
 
