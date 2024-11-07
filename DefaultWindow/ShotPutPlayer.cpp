@@ -4,7 +4,7 @@
 #include "CScrollMgr.h"
 #include "CBmpMgr.h"
 
-CShotPutPlayer::CShotPutPlayer() : m_fAngle(0.f), m_fXSacle(1.f), m_fYSacle(1.f), m_fPosinAngle(0.f), m_fRotSpeed(0.f), m_bIsRot(false)
+CShotPutPlayer::CShotPutPlayer() : m_fAngle(0.f), m_fXSacle(1.f), m_fYSacle(1.f), m_fPosinAngle(0.f), m_fRotSpeed(0.f), m_bIsRotEnd(false)
 {
 }
 
@@ -16,8 +16,8 @@ CShotPutPlayer::~CShotPutPlayer()
 void CShotPutPlayer::Initialize()
 {
 	// 아직 값 안채워넣음
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"", L"");
-
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/ShotPutPlayer.bmp", L"ShotPutPlayer");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/ShotPutPlayer.bmp", L"ShotPutPlayerPlg");
 
 	m_tInfo.vPos = { 100.f, 300.f, 0.f };
 	m_tInfo.vLook = { 1.f, 0.f, 0.f };
@@ -55,13 +55,28 @@ void CShotPutPlayer::Render(HDC hDC)
 	}
 
 	// 사각형 그리기
-	MoveToEx(hDC, vecVertx[0].x, vecVertx[0].y, nullptr);
-	for (int i = 1; i < 4; ++i)
-	{
-		LineTo(hDC, vecVertx[i].x, vecVertx[i].y);
-	}
-	LineTo(hDC, vecVertx[0].x, vecVertx[0].y);
+	//MoveToEx(hDC, vecVertx[0].x, vecVertx[0].y, nullptr);
+	//for (int i = 1; i < 4; ++i)
+	//{
+	//	LineTo(hDC, vecVertx[i].x, vecVertx[i].y);
+	//}
+	//LineTo(hDC, vecVertx[0].x, vecVertx[0].y);
 
+	POINT pt[4] = { {vecVertx[1].x, vecVertx[1].y}, {vecVertx[2].x, vecVertx[2].y}, {vecVertx[0].x, vecVertx[0].y}, {vecVertx[3].x, vecVertx[3].y} };
+
+	HDC hPlgDC = CBmpMgr::Get_Instance()->Find_Image(L"ShotPutPlayerPlg");
+	HDC hMemDC = CBmpMgr::Get_Instance()->Find_Image(L"ShotPutPlayer");
+
+	PlgBlt(hDC,
+		pt,
+		hMemDC,
+		0,
+		0,
+		15,
+		15,
+		nullptr,
+		0,
+		0);
 
 	// 포신
 	D3DXVECTOR3 vecStart = m_tInfo.vPos;
@@ -71,15 +86,8 @@ void CShotPutPlayer::Render(HDC hDC)
 		0.f
 	};
 
-
-
 	MoveToEx(hDC, vecStart.x, vecStart.y, nullptr);
 	LineTo(hDC, vecEnd.x, vecEnd.y);
-
-	// 스코어 출력
-	TCHAR szScore[64] = L"";
-	swprintf_s(szScore, L"%.2f", m_tInfo.vPos.x);
-	TextOut(hDC, 0, 0, szScore, wcslen(szScore));
 }
 
 void CShotPutPlayer::Release()
@@ -90,15 +98,14 @@ void CShotPutPlayer::KeyInput()
 {
 	if (KeyManager::Get_Instance()->Key_Up(VK_RBUTTON))
 	{
-		m_bIsRot = true;
-		// 던지기
+		m_bIsRotEnd = true;
 	}
 
-	if (KeyManager::Get_Instance()->Key_Pressing(VK_RBUTTON) && !m_bIsRot)
+	if (KeyManager::Get_Instance()->Key_Pressing(VK_RBUTTON) && !m_bIsRotEnd)
 	{
 		if (m_fRotSpeed > 15.5f)
 		{
-			m_bIsRot = true;
+			m_bIsRotEnd = true;
 		}
 		else
 		{

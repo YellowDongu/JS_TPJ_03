@@ -202,7 +202,13 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="ShotPutStadium.h">
-      <Filter>03. Stages\Stage 03</Filter>
+      <Filter>03. Stages\Stage 03\ShotPutStadium</Filter>
+    </ClInclude>
+    <ClInclude Include="ShotPutPlayer.h">
+      <Filter>03. Stages\Stage 03\ShotPutPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="ShotPutBall.h">
+      <Filter>03. Stages\Stage 03\ShotPutBall</Filter>
     </ClInclude>
     <ClInclude Include="ShotPutBall.h">
       <Filter>헤더 파일</Filter>
@@ -294,7 +300,7 @@
       <Filter>04. Manager\02. Bmp</Filter>
     </ClCompile>
     <ClCompile Include="ShotPutStadium.cpp">
-      <Filter>03. Stages\Stage 03</Filter>
+      <Filter>03. Stages\Stage 03\ShotPutStadium</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

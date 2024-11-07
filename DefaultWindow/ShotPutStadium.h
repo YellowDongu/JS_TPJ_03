@@ -14,6 +14,7 @@ public:
 	void Release() override;
 
 private:
+	const TCHAR* m_pFrameKey;
 	D3DXVECTOR3 m_vUpLine[2];
 	D3DXVECTOR3 m_vDownLine[2];
 	D3DXVECTOR3 m_vStartStand[2];

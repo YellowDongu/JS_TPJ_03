@@ -3,6 +3,7 @@
 #include "SceneManager.h"
 #include "KeyManager.h"
 #include "CScrollMgr.h"
+#include "SoundMgr.h"
 
 CMainGame::CMainGame() : m_DC(nullptr), m_hBit(nullptr), m_memDc(nullptr)
 {
@@ -16,6 +17,7 @@ CMainGame::~CMainGame()
 
 void CMainGame::Initialize()
 {
+	CSoundMgr::Get_Instance()->Initialize();
 	m_DC = GetDC(g_hWnd);
 	m_hBit = CreateCompatibleBitmap(m_DC, WINCX, WINCY);
 	m_memDc = CreateCompatibleDC(m_DC);
@@ -42,7 +44,7 @@ void CMainGame::Render()
 
 void CMainGame::Release()
 {
-
+	CSoundMgr::Get_Instance()->Destroy_Instance();
 	CSceneManager::Destroy();
 	KeyManager::Get_Instance()->Destroy_Instance();
 	CScrollMgr::Destroy_Instance();
