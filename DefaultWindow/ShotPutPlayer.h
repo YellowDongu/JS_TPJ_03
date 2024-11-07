@@ -20,7 +20,7 @@ public:
 	void	SetXSacle(float fXSacle) { m_fXSacle = fXSacle; }
 	void	SetYSacle(float fYSacle) { m_fYSacle = fYSacle; }
 
-	bool	GetIsRot() { return m_bIsRot; }
+	bool	GetIsRotEnd() { return m_bIsRotEnd; }
 	float	GetAngle() { return m_fAngle; }
 	float	GetRotSpeed() { return m_fRotSpeed; }
 	float	GetPosinAngle() { return m_fPosinAngle; }
@@ -33,7 +33,7 @@ private:
 	void SetMatrix();
 
 private:
-	bool m_bIsRot;
+	bool m_bIsRotEnd;
 	float m_fAngle;
 	float m_fRotSpeed;
 	float m_fPosinAngle;

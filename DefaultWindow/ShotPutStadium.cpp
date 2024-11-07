@@ -16,8 +16,9 @@ CShotPutStadium::~CShotPutStadium()
 
 void CShotPutStadium::Initialize()
 {
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"", L"");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/ShotPutMap.bmp", L"ShotPutMap");
 
+	m_pFrameKey = L"ShotPutMap";
 
 	// 위치 조정 하고 색 채우기 ㅋㅋ
 	m_vUpLine[0] = { 220.f, 250.f, 0.f }; // LeftTop
@@ -41,13 +42,18 @@ void CShotPutStadium::LateUpdate()
 
 void CShotPutStadium::Render(HDC hDC)
 {
-	MoveToEx(hDC, m_vUpLine[0].x, m_vUpLine[0].y, nullptr);
-	LineTo(hDC, m_vUpLine[1].x, m_vUpLine[1].y);
+	HDC hMemDc = CBmpMgr::Get_Instance()->Find_Image(m_pFrameKey);
 
-	MoveToEx(hDC, m_vDownLine[0].x, m_vDownLine[0].y, nullptr);
-	LineTo(hDC, m_vDownLine[1].x, m_vDownLine[1].y);
+	BitBlt(hDC, 0, 0, WINCX, WINCY, hMemDc, 0, 0, SRCCOPY);
 
-	Ellipse(hDC, m_vStartStand[0].x, m_vStartStand[0].y, m_vStartStand[1].x, m_vStartStand[1].y);
+
+	//MoveToEx(hDC, m_vUpLine[0].x, m_vUpLine[0].y, nullptr);
+	//LineTo(hDC, m_vUpLine[1].x, m_vUpLine[1].y);
+	//
+	//MoveToEx(hDC, m_vDownLine[0].x, m_vDownLine[0].y, nullptr);
+	//LineTo(hDC, m_vDownLine[1].x, m_vDownLine[1].y);
+
+	//Ellipse(hDC, m_vStartStand[0].x, m_vStartStand[0].y, m_vStartStand[1].x, m_vStartStand[1].y);
 }
 
 void CShotPutStadium::Release()
