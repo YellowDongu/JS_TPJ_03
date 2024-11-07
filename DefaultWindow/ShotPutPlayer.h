@@ -43,5 +43,6 @@ private:
 	D3DXMATRIX matRotZ;
 	D3DXMATRIX matTrans;
 
+
 };
 

@@ -17,8 +17,15 @@ public:
 
 private:
 	float power;
+	float time;
 
 	Archer* archer;
 	Arrow* arrow;
 	vector<DeadArrow*> deadArrows;
+
+
+	HBRUSH groundBrush;
+	HPEN groundPen;
+	HBRUSH skyBrush;
+	HPEN skyPen;
 };

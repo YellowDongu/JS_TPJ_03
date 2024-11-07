@@ -210,6 +210,12 @@
     <ClInclude Include="ShotPutBall.h">
       <Filter>03. Stages\Stage 03\ShotPutBall</Filter>
     </ClInclude>
+    <ClInclude Include="ShotPutBall.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ShotPutPlayer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
