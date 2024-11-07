@@ -114,12 +114,6 @@
     <ClInclude Include="DeadArrow.h">
       <Filter>03. Stages\Stage 02</Filter>
     </ClInclude>
-    <ClInclude Include="ShotPutPlayer.h">
-      <Filter>01. Obj\ShotPutPlayer</Filter>
-    </ClInclude>
-    <ClInclude Include="ShotPutBall.h">
-      <Filter>01. Obj\ShotPutBall</Filter>
-    </ClInclude>
     <ClInclude Include="Ball.h">
       <Filter>03. Stages\Stage 01\01. Ball</Filter>
     </ClInclude>
@@ -209,6 +203,12 @@
     </ClInclude>
     <ClInclude Include="ShotPutStadium.h">
       <Filter>03. Stages\Stage 03</Filter>
+    </ClInclude>
+    <ClInclude Include="ShotPutBall.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ShotPutPlayer.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
