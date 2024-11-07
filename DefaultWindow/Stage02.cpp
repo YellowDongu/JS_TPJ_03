@@ -36,6 +36,8 @@ void CStage02::Initialize()
 	arrow->setPosition(archer->getPosition());
 	power = 0.0f;
 	scrollMgr->Set_ScrollX(scrollMgr->Get_ScrollX() * -1);
+
+	CSoundMgr::Get_Instance()->PlayBGM(L"MainBGM.wav", 0.5f);
 }
 
 void CStage02::Update()
@@ -85,20 +87,32 @@ void CStage02::LateUpdate()
 
 	if (arrow && !arrow->isShot() && time <= 0.0f)
 	{
+		if (keyMgr->Key_Down(VK_LBUTTON))
+		{
+			soundMgr->StopSound(CHANNELID::SOUND_EFFECT);
+			soundMgr->PlaySoundW(L"bow_pull.mp3",CHANNELID::SOUND_EFFECT, 1.f);
+		}
 		if (keyMgr->Key_Pressing(VK_LBUTTON))
 		{
 			if (power >= 500.0f)
 				power = 500.0f;
 			else
 				power += Time.GetDeltaTime() * 200.0f;
+
+
 		}
 		else if (power >= 50.0f)
 		{
 			arrow->shoot(power);
 			power = 0.0f;
+			soundMgr->StopSound(CHANNELID::SOUND_EFFECT);
+			soundMgr->PlaySoundW(L"bow_shot.mp3", CHANNELID::SOUND_EFFECT, 1.f);
 		}
 		else
+		{
 			power = 0.0f;
+			soundMgr->StopSound(CHANNELID::SOUND_EFFECT);
+		}
 	}
 	else if(arrow)
 	{
@@ -108,6 +122,7 @@ void CStage02::LateUpdate()
 			DeadArrow* deadArrow = new DeadArrow();
 			deadArrow->init(vertex[0], vertex[1]);
 			deadArrows.push_back(deadArrow);
+			soundMgr->PlaySoundW(L"arrow.mp3", CHANNELID::SOUND_EFFECT, 1.f);
 
 			delete arrow;
 			arrow = nullptr;
@@ -177,4 +192,6 @@ void CStage02::Release()
 		delete deadArrow;
 	}
 	deadArrows.clear();
+
+	soundMgr->StopAll();
 }

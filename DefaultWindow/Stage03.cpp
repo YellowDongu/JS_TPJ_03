@@ -35,7 +35,7 @@ void CStage03::Initialize()
 
 	dynamic_cast<CShotPutBall*>(m_pShotPutBall)->Set_Player(m_pPlayer);
 
-	CSoundMgr::Get_Instance()->PlayBGM(L"MainBGM.wav", 1.f);
+	CSoundMgr::Get_Instance()->PlayBGM(L"MainBGM.wav", 0.5f);
 }
 
 void CStage03::Update()
