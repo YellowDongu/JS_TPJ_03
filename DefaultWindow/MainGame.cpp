@@ -3,7 +3,9 @@
 #include "SceneManager.h"
 #include "KeyManager.h"
 #include "CScrollMgr.h"
+#include "CBmpMgr.h"
 #include "SoundMgr.h"
+#include "TimeManager.h"
 
 CMainGame::CMainGame() : m_DC(nullptr), m_hBit(nullptr), m_memDc(nullptr)
 {
@@ -26,6 +28,7 @@ void CMainGame::Initialize()
 	DeleteObject(hPrevBit);
 
 	CSceneManager::Instantiate();
+	CSoundMgr::Get_Instance()->Initialize();
 
 }
 
@@ -44,9 +47,12 @@ void CMainGame::Render()
 
 void CMainGame::Release()
 {
-	CSoundMgr::Get_Instance()->Destroy_Instance();
 	CSceneManager::Destroy();
 	KeyManager::Get_Instance()->Destroy_Instance();
 	CScrollMgr::Destroy_Instance();
+	CBmpMgr::Get_Instance()->Release();
+	CBmpMgr::Destroy_Instance();
+	CSoundMgr::Get_Instance()->Release();
+	CSoundMgr::Destroy_Instance();
 	ReleaseDC(g_hWnd, m_DC);
 }
