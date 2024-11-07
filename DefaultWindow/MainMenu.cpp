@@ -26,7 +26,7 @@ void CMainMenu::Initialize()
 	newButton = new GameSelectButton();
 	buttons.push_back(newButton);
 	newButton->init(RECT{ 523, 388, 623, 488 });
-	bmpMgr->Insert_Bmp(L".\\Assets\\MainMenu.bmp", L"MainMenu");
+	bmpMgr->Insert_Bmp(L".\\Sprite\\MainMenu.bmp", L"MainMenu");
 }
 
 void CMainMenu::Update()
