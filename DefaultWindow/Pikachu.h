@@ -7,6 +7,15 @@ enum PlayerType
 	PLAYER02
 };
 
+enum State
+{
+	IDLE,
+	JUMP,
+	SLIDING,
+	SLIDING_FLIP,
+	END_STATE
+};
+
 class Pikachu final : public CObj
 {
 public:
@@ -28,14 +37,20 @@ public:
 	void Move();
 	void HandleVelocityInput();
 	void UpdateVertex();
+	void UpdateAnimation();
 
 private:
+	AniInfo mClip[END_STATE];
+	State mState;
 	PlayerType mType;
 	D3DXVECTOR2 mVelocity;
+	D3DXVECTOR2 mOffset;
 	D3DXVECTOR3 mVertices[4];
 	float mAngle;
 	float mWidth;
 	float mHeight;
+	float mCurrentAniTime;
+	int mFrame;
 	int mScore;
 	bool mSliding;
 	bool mSmash;

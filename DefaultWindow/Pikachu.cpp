@@ -4,10 +4,14 @@
 #include <sstream>
 #include <string>
 
+#include "CBmpMgr.h"
 #include "KeyManager.h"
 #include "TimeManager.h"
 
-Pikachu::Pikachu(int type): mType(static_cast<PlayerType>(type)), mAngle(0), mWidth(0), mHeight(0), mScore(0),
+Pikachu::Pikachu(int type): mClip{}, mState(IDLE), mType(static_cast<PlayerType>(type)), mAngle(0), mWidth(0), mHeight(0),
+                            mCurrentAniTime(0),
+                            mFrame(0),
+                            mScore(0),
                             mSliding(false), mSmash(false), mJump(false)
 {
 }
@@ -35,6 +39,25 @@ void Pikachu::Initialize()
 	mVertices[1] = { m_tInfo.vPos.x + halfWidth, m_tInfo.vPos.y -halfHeight, 0.f };  // 오른쪽 상단
 	mVertices[2] = { m_tInfo.vPos.x + halfWidth, m_tInfo.vPos.y + halfHeight, 0.f };   // 오른쪽 하단
 	mVertices[3] = { m_tInfo.vPos.x - halfWidth, m_tInfo.vPos.y + halfHeight, 0.f };   // 왼쪽 하단
+
+	switch (mType)
+	{
+	case PLAYER01:
+		mClip[IDLE] = { CBmpMgr::Get_Instance()->Find_Image(L"Pikachu1P_Idle"), 128,128,5 };
+		mClip[JUMP] = { CBmpMgr::Get_Instance()->Find_Image(L"Pikachu1P_Jump"), 128,128,5 };
+		mClip[SLIDING] = { CBmpMgr::Get_Instance()->Find_Image(L"Pikachu_Sliding"), 128,128,2 };
+		mClip[SLIDING_FLIP] = { CBmpMgr::Get_Instance()->Find_Image(L"Pikachu_Sliding_Flip"), 128,128,2 };
+		mOffset = { -58.f,-25.f };
+		break;
+	case PLAYER02:
+		mClip[IDLE] = { CBmpMgr::Get_Instance()->Find_Image(L"Pikachu2P_Idle"), 128,128,5 };
+		mClip[JUMP] = { CBmpMgr::Get_Instance()->Find_Image(L"Pikachu2P_Jump"), 128,128,5 };
+		mClip[SLIDING] = { CBmpMgr::Get_Instance()->Find_Image(L"Pikachu_Sliding"), 128,128,2 };
+		mClip[SLIDING_FLIP] = { CBmpMgr::Get_Instance()->Find_Image(L"Pikachu_Sliding_Flip"), 128,128,2 };
+		mOffset = { -18.f,-25.f };
+		break;
+	}
+
 }
 
 void Pikachu::Update()
@@ -50,6 +73,21 @@ void Pikachu::LateUpdate()
 
 void Pikachu::Render(HDC hDC)
 {
+	D3DXVECTOR3 leftTop = GetLeftTop();
+	int left = (int)(leftTop.x + mOffset.x);
+	int top = (int)(leftTop.y + mOffset.y);
+
+	// sprite render
+	GdiTransparentBlt(hDC,
+		left, top,
+		128, 128,
+		mClip[mState].Bitmap,
+		128 * mFrame, 0,
+		128, 128,
+		RGB(127, 127, 127));
+
+
+
 	// 원하는 색상으로 펜 생성 (예: 빨간색)
 	HPEN hPen = CreatePen(PS_SOLID, 1, RGB(255, 0, 0));
 	HPEN hOldPen = (HPEN)SelectObject(hDC, hPen);
@@ -77,13 +115,72 @@ void Pikachu::Render(HDC hDC)
 	switch (mType)
 	{
 	case PLAYER01:
-		TextOut(hDC, 100, 100, positionText.c_str(), positionText.length());
+		if (mScore < 10)
+		{
+			GdiTransparentBlt(hDC,
+				100, 100,
+				64, 64,
+				CBmpMgr::Get_Instance()->Find_Image(L"Number"),
+				64 * (mScore % 10), 0,
+				64, 64,
+				RGB(127, 127, 127));
+		}
+
+		else if (mScore >= 10)
+		{
+			GdiTransparentBlt(hDC,
+				100, 100,
+				64, 64,
+				CBmpMgr::Get_Instance()->Find_Image(L"Number"),
+				64 * (mScore / 10), 0,
+				64, 64,
+				RGB(127, 127, 127));
+
+			GdiTransparentBlt(hDC,
+				166, 100,
+				64, 64,
+				CBmpMgr::Get_Instance()->Find_Image(L"Number"),
+				64 * (mScore % 10), 0,
+				64, 64,
+				RGB(127, 127, 127));
+		}
+		
 		break;
 	case PLAYER02:
-		TextOut(hDC, 600, 100, positionText.c_str(), positionText.length());
+		if (mScore < 10)
+		{
+			GdiTransparentBlt(hDC,
+				700 - 64, 100,
+				64, 64,
+				CBmpMgr::Get_Instance()->Find_Image(L"Number"),
+				64 * (mScore % 10), 0,
+				64, 64,
+				RGB(127, 127, 127));
+		}
+
+		else if (mScore >= 10)
+		{
+			GdiTransparentBlt(hDC,
+				700 - 66 - 64, 100,
+				64, 64,
+				CBmpMgr::Get_Instance()->Find_Image(L"Number"),
+				64 * (mScore / 10), 0,
+				64, 64,
+				RGB(127, 127, 127));
+
+			GdiTransparentBlt(hDC,
+				700 - 64, 100,
+				64, 64,
+				CBmpMgr::Get_Instance()->Find_Image(L"Number"),
+				64 * (mScore % 10), 0,
+				64, 64,
+				RGB(127, 127, 127));
+		}
 		break;
 	}
 
+
+	UpdateAnimation();
 }
 
 void Pikachu::Release()
@@ -137,7 +234,9 @@ void Pikachu::Move()
 		// 바운더리 밖으로 못 벗어나게 설정
 		if (GetRightBottom().y > 524)
 		{
+			mState = IDLE;
 			mVelocity.y = 0;
+			mOffset = { -58.f,-25.f };
 			mSliding = false;
 			mSmash = false;
 			mJump = false;
@@ -162,7 +261,9 @@ void Pikachu::Move()
 		// 바운더리 밖으로 못 벗어나게 설정
 		if (GetRightBottom().y > 524)
 		{
+			mState = IDLE;
 			mVelocity.y = 0;
+			mOffset = { -18.f,-25.f };
 			mSliding = false;
 			mSmash = false;
 			mJump = false;
@@ -204,10 +305,13 @@ void Pikachu::HandleVelocityInput()
 			if (!mJump && KeyManager::Get_Instance()->Key_Pressing('Z'))
 			{
 				// 슬라이딩
+				mState = SLIDING_FLIP;
 				mSliding = true;
+				mFrame = 0;
 				mAngle = -90.f;
 				mVelocity.x = -400.f;
 				mVelocity.y = -250.f;
+				mOffset = { 0,-68.f };
 			}
 
 			else
@@ -222,9 +326,12 @@ void Pikachu::HandleVelocityInput()
 			{
 				// 슬라이딩
 				mSliding = true;
+				mState = SLIDING;
+				mFrame = 0;
 				mAngle = 90.f;
 				mVelocity.x = 400.f;
 				mVelocity.y = -250.f;
+				mOffset = { 0,-68.f };
 			}
 
 			else
@@ -244,6 +351,7 @@ void Pikachu::HandleVelocityInput()
 		if (!mJump && KeyManager::Get_Instance()->Key_Pressing('R') && !mSliding)
 		{
 			mJump = true;
+			mState = JUMP;
 			mVelocity.y = -500.f;
 		}
 
@@ -274,10 +382,13 @@ void Pikachu::HandleVelocityInput()
 			if (!mJump && KeyManager::Get_Instance()->Key_Pressing(VK_RETURN) && mVelocity.y == 0)
 			{
 				// 슬라이딩
+				mState = SLIDING_FLIP;
 				mSliding = true;
+				mFrame = 0;
 				mAngle = -90.f;
 				mVelocity.x = -400.f;
 				mVelocity.y = -250.f;
+				mOffset = { 0,-68.f };
 			}
 
 			else
@@ -292,9 +403,12 @@ void Pikachu::HandleVelocityInput()
 			{
 				// 슬라이딩
 				mSliding = true;
+				mState = SLIDING;
+				mFrame = 0;
 				mAngle = 90.f;
 				mVelocity.x = 400.f;
 				mVelocity.y = -250.f;
+				mOffset = { 0,-68.f };
 			}
 
 			else
@@ -314,6 +428,7 @@ void Pikachu::HandleVelocityInput()
 		if (!mJump && KeyManager::Get_Instance()->Key_Pressing(VK_UP) && !mSliding)
 		{
 			mJump = true;
+			mState = JUMP;
 			mVelocity.y = -500.f;
 		}
 
@@ -356,5 +471,16 @@ void Pikachu::UpdateVertex()
 	for (int i = 0; i < 4; ++i)
 	{
 		D3DXVec3TransformCoord(&mVertices[i], &localVertices[i], &m_tInfo.matWorld);
+	}
+}
+
+void Pikachu::UpdateAnimation()
+{
+	mCurrentAniTime += TimeManager::GetInstance().GetDeltaTime();
+	if (mCurrentAniTime >= 0.15f)
+	{
+		mCurrentAniTime = 0;
+		++mFrame;
+		if (mFrame >= mClip[mState].Frame) mFrame = 0;
 	}
 }

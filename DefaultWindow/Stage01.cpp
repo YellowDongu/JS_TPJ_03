@@ -6,6 +6,7 @@
 #include "KeyManager.h"
 #include "Obj.h"
 #include "Pikachu.h"
+#include "SoundMgr.h"
 
 
 CStage01::CStage01(): mKeyManager(nullptr)
@@ -22,6 +23,19 @@ void CStage01::Initialize()
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Sprite/Pikachu_BG.bmp", L"Pikachu_BG");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Sprite/Ball_Shadow.bmp", L"Ball_Shadow");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Sprite/Ball.bmp", L"Ball");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Sprite/Pikachu1P_Idle.bmp", L"Pikachu1P_Idle");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Sprite/Pikachu2P_Idle.bmp", L"Pikachu2P_Idle");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Sprite/Pikachu1P_Jump.bmp", L"Pikachu1P_Jump");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Sprite/Pikachu2P_Jump.bmp", L"Pikachu2P_Jump");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Sprite/Pikachu_Sliding.bmp", L"Pikachu_Sliding");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Sprite/Pikachu_Sliding_Flip.bmp", L"Pikachu_Sliding_Flip");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Sprite/Number.bmp", L"Number");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Sprite/Ball_Effect_01.bmp", L"Ball_Effect_01");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"./Sprite/Ball_Effect_02.bmp", L"Ball_Effect_02");
+
+
+
+	CSoundMgr::Get_Instance()->PlayBGM(L"bgm.mp3", 0.5f);
 
 
 	mKeyManager = KeyManager::Get_Instance();

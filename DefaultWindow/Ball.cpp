@@ -8,8 +8,8 @@
 
 Ball::Ball(Pikachu* p1, Pikachu* p2): mFadeBitmap(nullptr), mPlayer{p1, p2}, mWidth(0), mHeight(0), mOpacity(0),
                                       mFadeIn(false),
-                                      mFadeOut(false),
-                                      mCurrentTime(0), mAniTime(0), mFrame(0)
+                                      mFadeOut(false), mEffect(false),
+                                      mCurrentTime(0), mEffectTime(0), mAniTime(0), mFrame(0)
 {
 }
 
@@ -82,6 +82,7 @@ void Ball::LateUpdate()
 				mPlayer[0]->AddScore(1);
 				m_tInfo.vPos = { 100.f,100.f,0 };
 			}
+			mEffect = false;
 			mVelocity = { 0,0 };
 			mOpacity = 255;
 			mCurrentTime = 0;
@@ -115,13 +116,42 @@ void Ball::LateUpdate()
 		mAniTime = 0;
 		++mFrame;
 		if (mFrame == 5) mFrame = 0;
-	}	
+	}
+
+	mEffectTime += TimeManager::GetInstance().GetDeltaTime();
+	if (mEffectTime >= .05f)
+	{
+		mEffectTime = 0;
+		mAfterEffectPos[1] = mAfterEffectPos[0];
+		mAfterEffectPos[0].x = m_tInfo.vPos.x;
+		mAfterEffectPos[0].y = m_tInfo.vPos.y;
+	}
 }
 
 void Ball::Render(HDC hDC)
 {
 	// 524
 	//Rectangle(hDC, WINCX / 2 - 10, WINCY - 250, WINCX / 2 + 10, WINCY);
+
+	// Effect
+	if (mEffect)
+	{
+		GdiTransparentBlt(hDC,
+			mAfterEffectPos[0].x - 40, mAfterEffectPos[0].y - 40,
+			80, 80,
+			CBmpMgr::Get_Instance()->Find_Image(L"Ball_Effect_01"),
+			0, 0,
+			80, 80,
+			RGB(127, 127, 127));
+
+		GdiTransparentBlt(hDC,
+			mAfterEffectPos[1].x - 40, mAfterEffectPos[1].y - 40,
+			80, 80,
+			CBmpMgr::Get_Instance()->Find_Image(L"Ball_Effect_02"),
+			0, 0,
+			80, 80,
+			RGB(127, 127, 127));
+	}
 
 	// Ball
 	GdiTransparentBlt(hDC,
@@ -131,6 +161,7 @@ void Ball::Render(HDC hDC)
 		(80 * mFrame), 0,
 		80, 80,
 		RGB(127, 127, 127));
+
 
 	//Ellipse(hDC, m_tInfo.vPos.x - mWidth / 2.f, m_tInfo.vPos.y - mHeight / 2.f, m_tInfo.vPos.x + mWidth / 2.f, m_tInfo.vPos.y + mHeight / 2.f);
 
@@ -201,11 +232,13 @@ void Ball::Collision()
 
 		if (mPlayer[0]->IsSmash())
 		{
+			mEffect = true;
 			mVelocity.x = -vDir.x * 2000.f;
 			mVelocity.y = -vDir.y * 200.f;
 		}
 		else
 		{
+			mEffect = false;
 			mVelocity.x = -vDir.x * 500.f;
 			mVelocity.y = -vDir.y * 1000.f;
 		}
@@ -234,11 +267,13 @@ void Ball::Collision()
 
 		if (mPlayer[1]->IsSmash())
 		{
+			mEffect = true;
 			mVelocity.x = -vDir.x * 2000.f;
 			mVelocity.y = -vDir.y * 200.f;
 		}
 		else
 		{
+			mEffect = false;
 			mVelocity.x = -vDir.x * 500.f;
 			mVelocity.y = -vDir.y * 1000.f;
 		}
