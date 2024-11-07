@@ -20,6 +20,7 @@ public:
 
 private:
 	HBITMAP mFadeBitmap;
+	D3DXVECTOR2 mAfterEffectPos[2];
 	D3DXVECTOR2 mVelocity;
 	D3DXVECTOR3 mPrevPosition;
 	Pikachu* mPlayer[2];
@@ -28,7 +29,9 @@ private:
 	BYTE mOpacity;
 	bool mFadeIn;
 	bool mFadeOut;
+	bool mEffect;
 	float mCurrentTime;
+	float mEffectTime;
 	float mAniTime;
 	int mFrame;
 };

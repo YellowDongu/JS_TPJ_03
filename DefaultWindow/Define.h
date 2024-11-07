@@ -21,12 +21,23 @@ typedef struct tagInfo
 	
 }INFO;
 
+struct AniInfo
+{
+	HDC Bitmap;
+	float Width;
+	float Height;
+	int Frame;
+};
+
 
 
 enum CHANNELID
 {
 	SOUND_EFFECT,
 	SOUND_BGM,
+	SOUND_P1,
+	SOUND_P2,
+	SOUND_BALL,
 	MAXCHANNEL
 };
 
