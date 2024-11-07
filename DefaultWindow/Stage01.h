@@ -19,7 +19,6 @@ public:
 	void UpdateObjects() const;
 	void LateUpdateObjects() const;
 	void RenderObjects(HDC _hdc) const;
-	void CheckCollision();
 
 private:
 	std::list<CObj*> 	mObjects;

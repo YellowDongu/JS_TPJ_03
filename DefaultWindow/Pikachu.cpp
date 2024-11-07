@@ -8,7 +8,7 @@
 #include "TimeManager.h"
 
 Pikachu::Pikachu(int type): mType(static_cast<PlayerType>(type)), mAngle(0), mWidth(0), mHeight(0), mScore(0),
-                            mSliding(false)
+                            mSliding(false), mSmash(false), mJump(false)
 {
 }
 
@@ -71,7 +71,7 @@ void Pikachu::Render(HDC hDC)
 
 	// 좌표값을 문자열로 변환
 	std::wstringstream ss;
-	ss << L"Position: (" << GetLeftTop().x << L", " << GetLeftTop().y << L")";
+	ss << L"Score : (" << mScore << L")";
 	std::wstring positionText = ss.str();
 
 	switch (mType)
@@ -106,6 +106,23 @@ D3DXVECTOR3 Pikachu::GetRightBottom()
 	return rightBottom;
 }
 
+void Pikachu::StartGame()
+{
+	switch (mType)
+	{
+	case PLAYER01:
+		mVelocity = { 0,0 };
+		mAngle = 0;
+		m_tInfo.vPos = { 100.f,500.f,0 };
+		break;
+	case PLAYER02:
+		mVelocity = { 0,0 };
+		mAngle = 0;
+		m_tInfo.vPos = { 700.f,500.f,0 };
+		break;
+	}
+}
+
 void Pikachu::Move()
 {
 	float deltaTime = TimeManager::GetInstance().GetDeltaTime();
@@ -118,10 +135,14 @@ void Pikachu::Move()
 	{
 	case PLAYER01:
 		// 바운더리 밖으로 못 벗어나게 설정
-		if (m_tInfo.vPos.y > WINCY - mHeight / 2.f)
+		if (GetRightBottom().y > 524)
 		{
+			mVelocity.y = 0;
 			mSliding = false;
-			m_tInfo.vPos.y = WINCY - mHeight / 2.f;
+			mSmash = false;
+			mJump = false;
+			mAngle = 0;
+			m_tInfo.vPos.y = 524 - mHeight / 2.f;
 		}
 
 		if (m_tInfo.vPos.x < mWidth / 2.f)
@@ -139,12 +160,15 @@ void Pikachu::Move()
 
 	case PLAYER02:
 		// 바운더리 밖으로 못 벗어나게 설정
-		if (m_tInfo.vPos.y > WINCY - mHeight / 2.f)
+		if (GetRightBottom().y > 524)
 		{
+			mVelocity.y = 0;
 			mSliding = false;
-			m_tInfo.vPos.y = WINCY - mHeight / 2.f;
+			mSmash = false;
+			mJump = false;
+			mAngle = 0;
+			m_tInfo.vPos.y = 524 - mHeight / 2.f;
 		}
-
 		if (m_tInfo.vPos.x < WINCX / 2.f + mWidth / 2.f)
 		{
 			m_tInfo.vPos.x = WINCX / 2.f + mWidth / 2.f;
@@ -177,7 +201,7 @@ void Pikachu::HandleVelocityInput()
 
 		if (KeyManager::Get_Instance()->Key_Pressing('D') && !mSliding)
 		{
-			if (KeyManager::Get_Instance()->Key_Down('Z'))
+			if (!mJump && KeyManager::Get_Instance()->Key_Pressing('Z'))
 			{
 				// 슬라이딩
 				mSliding = true;
@@ -194,7 +218,7 @@ void Pikachu::HandleVelocityInput()
 
 		else if (KeyManager::Get_Instance()->Key_Pressing('G') && !mSliding)
 		{
-			if (KeyManager::Get_Instance()->Key_Down('Z'))
+			if (!mJump && KeyManager::Get_Instance()->Key_Pressing('Z'))
 			{
 				// 슬라이딩
 				mSliding = true;
@@ -217,29 +241,41 @@ void Pikachu::HandleVelocityInput()
 			}
 		}
 
-		if (KeyManager::Get_Instance()->Key_Down('R') && !mSliding)
+		if (!mJump && KeyManager::Get_Instance()->Key_Pressing('R') && !mSliding)
 		{
+			mJump = true;
 			mVelocity.y = -500.f;
+		}
+
+		if (mJump && KeyManager::Get_Instance()->Key_Pressing('Z'))
+		{
+			mSmash = true;
+		}
+
+		if (mJump && KeyManager::Get_Instance()->Key_Down('Z'))
+		{
+			mSmash = false;
 		}
 		break;
 
 	case PLAYER02:
-		if (KeyManager::Get_Instance()->Key_Down(VK_LEFT))
+		if (KeyManager::Get_Instance()->Key_Down(VK_LEFT) && !mSliding)
 		{
 			mVelocity.x = -250.f;
 		}
 
-		else if (KeyManager::Get_Instance()->Key_Down(VK_RIGHT))
+		else if (KeyManager::Get_Instance()->Key_Down(VK_RIGHT) && !mSliding)
 		{
 			mVelocity.x = 250.f;
 		}
 
-		if (KeyManager::Get_Instance()->Key_Pressing(VK_LEFT))
+		if (KeyManager::Get_Instance()->Key_Pressing(VK_LEFT) && !mSliding)
 		{
-			if (KeyManager::Get_Instance()->Key_Down(VK_RETURN))
+			if (!mJump && KeyManager::Get_Instance()->Key_Pressing(VK_RETURN) && mVelocity.y == 0)
 			{
 				// 슬라이딩
 				mSliding = true;
+				mAngle = -90.f;
 				mVelocity.x = -400.f;
 				mVelocity.y = -250.f;
 			}
@@ -250,12 +286,13 @@ void Pikachu::HandleVelocityInput()
 			}
 		}
 
-		else if (KeyManager::Get_Instance()->Key_Pressing(VK_RIGHT))
+		else if (KeyManager::Get_Instance()->Key_Pressing(VK_RIGHT) && !mSliding)
 		{
-			if (KeyManager::Get_Instance()->Key_Down(VK_RETURN))
+			if (!mJump && KeyManager::Get_Instance()->Key_Pressing(VK_RETURN) && mVelocity.y == 0)
 			{
 				// 슬라이딩
 				mSliding = true;
+				mAngle = 90.f;
 				mVelocity.x = 400.f;
 				mVelocity.y = -250.f;
 			}
@@ -268,13 +305,28 @@ void Pikachu::HandleVelocityInput()
 
 		else
 		{
-			mVelocity.x = 0;
+			if (!mSliding)
+			{
+				mVelocity.x = 0;
+			}
 		}
 
-		if (KeyManager::Get_Instance()->Key_Down(VK_UP))
+		if (!mJump && KeyManager::Get_Instance()->Key_Pressing(VK_UP) && !mSliding)
 		{
+			mJump = true;
 			mVelocity.y = -500.f;
 		}
+
+		if (mJump && KeyManager::Get_Instance()->Key_Pressing(VK_RETURN))
+		{
+			mSmash = true;
+		}
+
+		if (mJump && KeyManager::Get_Instance()->Key_Down(VK_RETURN))
+		{
+			mSmash = false;
+		}
+
 		break;
 	}
 }
