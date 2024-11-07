@@ -8,6 +8,8 @@
 
 #define scrollMgr CScrollMgr::Get_Instance()
 #define soundMgr CSoundMgr::Get_Instance()
+#define keyMgr KeyManager::Get_Instance()
+#define Time TimeManager::GetInstance()
 
 CStage02::CStage02() : archer(nullptr), arrow(nullptr), power(0.0f), time(0.0f)
 ,groundBrush(NULL),groundPen(NULL),skyBrush(NULL),skyPen(NULL)
@@ -23,13 +25,10 @@ void CStage02::Initialize()
 	// 이걸 MainGame에서 할 지 고민중
 	soundMgr->Initialize();
 
-
 	groundBrush = CreateSolidBrush(RGB(0, 200, 0));
 	groundPen = CreatePen(PS_SOLID, 2, RGB(0, 200, 0));
 	skyBrush = CreateSolidBrush(RGB(125, 200, 240));
 	skyPen = CreatePen(PS_SOLID, 2, RGB(125, 200, 240));
-
-
 
 	archer = new Archer();
 	archer->initalize();
@@ -51,7 +50,7 @@ void CStage02::Update()
 		arrow->initalize();
 		arrow->setPosition(archer->getPosition());
 
-		time = 3.0f;
+		time = 1.5f;
 	}
 
 	archer->update();
@@ -62,11 +61,9 @@ void CStage02::Update()
 	}
 	arrow->update();
 
-
-
 	if (time >= 0.0f)
 	{
-		time -= TimeManager::GetInstance().GetDeltaTime();
+		time -= Time.GetDeltaTime();
 		return;
 	}
 
@@ -79,23 +76,26 @@ void CStage02::Update()
 		scrollMgr->Set_ScrollX(scrollMgr->Get_ScrollX() * -1.0f);
 	else if (scrollMgr->Get_ScrollX() > 5000.0f)
 		scrollMgr->Set_ScrollX(5000.0f + scrollMgr->Get_ScrollX() * -1.0f);
-
-
 }
 
 void CStage02::LateUpdate()
 {
-	if (arrow && !arrow->isShot())
+	if (keyMgr->Key_Pressing(VK_RETURN))
 	{
-		if (KeyManager::Get_Instance()->Key_Pressing(VK_LBUTTON))
-		{
-			power += TimeManager::GetInstance().GetDeltaTime() * 200.0f;
-		}
-		else if (power >= 50.0f)
+		m_bReturn = true;
+	}
+
+	if (arrow && !arrow->isShot() && time <= 0.0f)
+	{
+		if (keyMgr->Key_Pressing(VK_LBUTTON))
 		{
 			if (power >= 500.0f)
 				power = 500.0f;
-
+			else
+				power += Time.GetDeltaTime() * 200.0f;
+		}
+		else if (power >= 50.0f)
+		{
 			arrow->shoot(power);
 			power = 0.0f;
 		}
@@ -139,8 +139,20 @@ void CStage02::Render(HDC _hdc)
 
 
 	archer->render(_hdc);
-	if(arrow)
+	if (arrow)
+	{
 		arrow->render(_hdc);
+		if (!arrow->isShot() && time <= 0.0f)
+		{
+			std::wstringstream powerText;
+			powerText << (int)(power / 5.0f) << " %";
+			std::wstring gauge = powerText.str();
+
+			D3DXVECTOR3 textPos = archer->getPosition();
+			textPos.y -= 100.0f;
+			TextOutW(_hdc, (int)textPos.x, (int)textPos.y, gauge.c_str(), gauge.length());
+		}
+	}
 
 	for (auto deadArrow : deadArrows)
 	{

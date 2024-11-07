@@ -4,6 +4,7 @@
 #include "CBmpMgr.h"
 
 #define bmpMgr CBmpMgr::Get_Instance()
+#define keyMgr KeyManager::Get_Instance()
 
 CMainMenu::CMainMenu()
 {
@@ -16,26 +17,21 @@ CMainMenu::~CMainMenu()
 void CMainMenu::Initialize()
 {
 	m_iOtherStage = -1;
-	RECT rect = { 200, 300, 300, 400 };
 	GameSelectButton* newButton = new GameSelectButton();
 	buttons.push_back(newButton);
-	newButton->init(rect, 1);
+	newButton->init(RECT{ 185, 389, 285, 489 });
 	newButton = new GameSelectButton();
 	buttons.push_back(newButton);
-	rect = { 350, 300, 450, 400 };
-	newButton->init(rect, 2);
+	newButton->init(RECT{ 350, 388, 450, 488 });
 	newButton = new GameSelectButton();
 	buttons.push_back(newButton);
-	rect = { 500, 300, 600, 400 };
-	newButton->init(rect, 3);
+	newButton->init(RECT{ 523, 388, 623, 488 });
 	bmpMgr->Insert_Bmp(L".\\Assets\\MainMenu.bmp", L"MainMenu");
 }
 
 void CMainMenu::Update()
 {
-	KeyManager::Get_Instance()->Update_Key();
-
-	if (!KeyManager::Get_Instance()->Key_Pressing(VK_LBUTTON)) return;
+	keyMgr->Update_Key();
 
 	POINT mousePos;
 	GetCursorPos(&mousePos);
@@ -43,7 +39,9 @@ void CMainMenu::Update()
 
 	for (int i = 0; i < 3; i++)
 	{
-		if (PtInRect(&buttons[i]->buttonArea(), mousePos))
+		if (!PtInRect(&buttons[i]->buttonArea(), mousePos))
+			continue;
+		if (buttons[i]->hoveringMouse())
 		{
 			m_iOtherStage = i + 1;
 		}
@@ -58,7 +56,7 @@ void CMainMenu::LateUpdate()
 
 void CMainMenu::Render(HDC _hdc)
 {
-	BitBlt(_hdc, 0,0,800,600, bmpMgr->Find_Image(L"MainMenu"), 0,0, NULL);
+	BitBlt(_hdc, 0,0,800,600, bmpMgr->Find_Image(L"MainMenu"), 0,0, SRCCOPY);
 
 
 	for (auto& button : buttons)
