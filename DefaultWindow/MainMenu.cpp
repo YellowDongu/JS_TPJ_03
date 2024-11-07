@@ -1,6 +1,9 @@
 #include "stdafx.h"
 #include "MainMenu.h"
 #include "KeyManager.h"
+#include "CBmpMgr.h"
+
+#define bmpMgr CBmpMgr::Get_Instance()
 
 CMainMenu::CMainMenu()
 {
@@ -25,6 +28,7 @@ void CMainMenu::Initialize()
 	buttons.push_back(newButton);
 	rect = { 500, 300, 600, 400 };
 	newButton->init(rect, 3);
+	bmpMgr->Insert_Bmp(L".\\Assets\\MainMenu.bmp", L"MainMenu");
 }
 
 void CMainMenu::Update()
@@ -54,6 +58,9 @@ void CMainMenu::LateUpdate()
 
 void CMainMenu::Render(HDC _hdc)
 {
+	BitBlt(_hdc, 0,0,800,600, bmpMgr->Find_Image(L"MainMenu"), 0,0, NULL);
+
+
 	for (auto& button : buttons)
 	{
 		button->render(_hdc);
